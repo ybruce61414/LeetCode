@@ -1,0 +1,22 @@
+{
+  "name": "leetcode-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "LC#125.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ybruce61414/LeetCode-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ybruce61414/LeetCode-practice/issues"
+  },
+  "homepage": "https://github.com/ybruce61414/LeetCode-practice#readme",
+  "dependencies": {
+    "prettier": "^2.5.0"
+  }
+}
