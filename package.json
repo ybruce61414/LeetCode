@@ -2,7 +2,7 @@
   "name": "leetcode-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "LC#125.js",
+  "main": "string/LC#125.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
