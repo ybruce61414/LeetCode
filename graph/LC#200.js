@@ -3,7 +3,7 @@
  * @param {character[][]} grid
  * @return {number}
  */
-var numIslands = function (grid) {
+var numIslandsDFS = function (grid) {
   let count = 0;
 
   const dfsHelper = (inputGrid, row, col) => {
@@ -34,6 +34,8 @@ var numIslands = function (grid) {
   return count;
 };
 
+var numIslandsBFS = function (grid) {};
+
 const grid1 = [
   ["1", "1", "1", "1", "0"],
   ["1", "1", "0", "1", "0"],
@@ -48,4 +50,4 @@ const grid2 = [
   ["0", "0", "0", "1", "1"],
 ];
 
-console.log(numIslands(grid2));
+console.log(numIslandsDFS(grid2));
