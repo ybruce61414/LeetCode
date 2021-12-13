@@ -1,18 +1,34 @@
-const binarySearch = (nums, target) => {
+const binarySearch1 = (nums, target) => {
+  //  recursion
   let midPosition = Math.floor(nums.length / 2);
 
-  if (target === nums[midPosition]) {
-    return target;
-  } else if (nums.length === 0) {
-    return undefined;
-  } else if (target > nums[midPosition]) {
-    return binarySearch(nums.slice(midPosition + 1, nums.length + 1), target);
+  if (nums[midPosition] === target) return target;
+
+  if (nums.length === 1) return undefined;
+
+  if (target > nums[midPosition]) {
+    return binarySearch(nums.slice(midPosition + 1, nums.length), target);
   } else {
     return binarySearch(nums.slice(0, midPosition), target);
   }
 };
 
-console.log(binarySearch([2, 5, 7, 8, 19, 50], 19));
+const binarySearch2 = (nums, target) => {
+  //  iteration
+  let left = 0;
+  let right = nums.length - 1;
 
-let a = [1];
-console.log(a.slice(1, 2));
+  while (right > left) {
+    let mid = Math.floor((right + left) / 2);
+    if (nums[mid] < target) {
+      left = mid + 1;
+    } else if (nums[mid] > target) {
+      right = mid - 1;
+    } else {
+      return target;
+    }
+  }
+  return undefined;
+};
+
+console.log(binarySearch2([2, 5, 7, 8, 19, 50], 19));
