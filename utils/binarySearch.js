@@ -13,3 +13,6 @@ const binarySearch = (nums, target) => {
 };
 
 console.log(binarySearch([2, 5, 7, 8, 19, 50], 19));
+
+let a = [1];
+console.log(a.slice(1, 2));
