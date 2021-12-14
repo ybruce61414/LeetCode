@@ -18,7 +18,7 @@ const binarySearch2 = (nums, target) => {
   let left = 0;
   let right = nums.length - 1;
 
-  while (right > left) {
+  while (right >= left) {
     let mid = Math.floor((right + left) / 2);
     if (nums[mid] < target) {
       left = mid + 1;
@@ -28,7 +28,7 @@ const binarySearch2 = (nums, target) => {
       return target;
     }
   }
-  return undefined;
+  return -1;
 };
 
-console.log(binarySearch2([2, 5, 7, 8, 19, 50], 19));
+console.log(binarySearch2([2, 5, 7, 8, 19, 50], 50));

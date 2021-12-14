@@ -27,49 +27,35 @@ var lengthOfLIS2 = function (nums) {
   for (let i = 1; i < nums.length; i++) {
     if (nums[i] > res[res.length - 1]) {
       res.push(nums[i]);
-    } else if (nums[i] < res[0]) {
-      res[0] = nums[i];
     } else {
-      let left = 0;
-      let right = res.length - 1;
-      let mid;
-      while (right > left) {
-        mid = Math.floor((right + left) / 2);
-        if (res[mid] < nums[i]) left = mid + 1;
-        else if (res[mid] > nums[i]) right = mid - 1;
-        else right = mid;
-      }
-      res[right] = nums[i];
+      let idx = binarySearchIdx(res, nums[i]);
+      res[idx] = nums[i];
     }
   }
 
   return res.length;
 };
 
-// const binarySearch = (nums, target) => {
-//   //  iteration
-//   let left = 0;
-//   let right = nums.length - 1;
-//   let mid;
-//
-//   if (nums.length === 1) return Math.floor((right + left) / 2);
-//   if (nums.length === 0) return undefined;
-//
-//   while (right > left) {
-//     mid = Math.floor((right + left) / 2);
-//     if (nums[mid] < target) {
-//       left = mid + 1;
-//     } else if (nums[mid] > target) {
-//       right = mid - 1;
-//     } else {
-//       return mid;
-//     }
-//   }
-//   return left;
-// };
-//
-// console.log(binarySearch([3, 10], 8));
-console.log(lengthOfLIS2([4, 10, 4, 3, 8, 9]));
+const binarySearchIdx = (arr, target) => {
+  //find first larger or equal
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    let mid = Math.floor((left + right) / 2);
+    if (target > arr[mid]) {
+      left = mid + 1;
+    } else {
+      right = mid;
+    }
+  }
+  return right;
+};
+
+console.log(lengthOfLIS2([7, 7, 7, 7, 7, 7, 7]));
+console.log(lengthOfLIS2([0, 1, 0, 3, 2, 3]));
 console.log(lengthOfLIS2([10, 9, 2, 5, 3, 7, 101, 18]));
 //falied case
 console.log(lengthOfLIS2([3, 5, 6, 2, 5, 4, 19, 5, 6, 7, 12]));
+
+// console.log(binarySearchIdx([2, 3, 4, 10, 40], 5));
