@@ -3,28 +3,32 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-
 var threeSum = function (nums) {
-  nums = nums.sort((a, b) => a - b);
-  const res = [];
+  nums.sort((a, b) => a - b);
+  let res = [];
 
   for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
     const target = 0 - nums[i];
-    let left = i + 1;
-    let right = nums.length - 1;
+    let l = i + 1;
+    let r = nums.length - 1;
 
-    while (right > left) {
-      if (nums[left] + nums[right] === target) {
-        res.push([nums[left], nums[i], nums[right]]);
-      } else if (nums[left] + nums[right] < target) {
-        left += 1;
+    while (r > l) {
+      if (nums[l] + nums[r] === target) {
+        res.push([nums[i], nums[l], nums[r]]);
+        l += 1;
+        r -= 1;
+        while (nums[l] === nums[l - 1]) {
+          l += 1;
+        }
+      } else if (nums[l] + nums[r] < target) {
+        l += 1;
       } else {
-        right += 1;
+        r -= 1;
       }
     }
   }
-
-  return nums;
+  return res;
 };
 
 console.log(threeSum([-1, 0, 1, 2, -1, -4]));
