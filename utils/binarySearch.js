@@ -31,4 +31,19 @@ const binarySearch2 = (nums, target) => {
   return -1;
 };
 
-console.log(binarySearch2([2, 5, 7, 8, 19, 50], 50));
+const firstGreater = (arr, target) => {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (right > left) {
+    let mid = Math.floor((right + left) / 2);
+    if (arr[mid] <= target) {
+      left = mid + 1;
+    } else {
+      right = mid;
+    }
+  }
+  return right;
+};
+
+console.log(firstGreater([2, 5, 7, 8, 19, 19, 19, 50], 2));
