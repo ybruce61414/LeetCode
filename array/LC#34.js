@@ -5,37 +5,20 @@
  * @return {number[]}
  */
 var searchRange = function (nums, target) {
-  // let right = findFirstGreaterOrEqual(nums, target + 1);
-  // let left = right;
-  //
-  // if (right === 0) {
-  //   return nums[0] === target ? [0, 0] : [-1, -1];
-  // } else {
-  //   if (nums[right] !== target && nums[right - 1] !== target) {
-  //     return [-1, -1];
-  //   } else {
-  //     right = nums[right] === target ? right : right - 1;
-  //     left = right;
-  //   }
-  //
-  //   for (let i = right - 1; i >= 0; i--) {
-  //     if (nums[i] !== target) break;
-  //     left = i;
-  //   }
-  //   return [left, right];
-  // }
-
   let right = findFirstGreaterOrEqual(nums, target + 1);
   let left = findFirstGreaterOrEqual(nums, target);
 
-  if (left === right && nums[left] !== target) return [-1, -1];
-
-  if (right !== 0 && nums[right] !== target) right = right - 1;
+  if (left === right && nums[left] !== target) {
+    return [-1, -1];
+  } else if (right !== left && nums[right] !== target) {
+    right = right - 1;
+  }
 
   return [left, right];
 };
 
 const findFirstGreaterOrEqual = (arr, target) => {
+  //find the first element equal or greater than the target
   let l = 0;
   let r = arr.length - 1;
 
