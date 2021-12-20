@@ -1,4 +1,4 @@
-//  287. Find the Duplicate Number
+//  287. Find the Duplicate Number (hard)
 //  You must solve the problem without modifying the array nums and uses only constant extra space.
 /**
  * @param {number[]} nums
@@ -14,6 +14,8 @@ var findDuplicate1 = function (nums) {
   return null;
 };
 
-var findDuplicate2 = function (nums) {};
+var findDuplicate2 = function (nums) {
+  //  to-do
+};
 
 console.log(findDuplicate2([1, 3, 4, 2, 2]));
