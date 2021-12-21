@@ -46,4 +46,4 @@ const firstGreater = (arr, target) => {
   return right;
 };
 
-console.log(firstGreater([2, 5, 7, 8, 19, 19, 19, 50], 2));
+console.log(firstGreater([2, 5, 7, 8, 19, 19, 19, 50], 1));
