@@ -20,10 +20,10 @@ a.next = b;
 b.next = c;
 c.next = d;
 d.next = e;
-e.next = f;
-f.next = g;
-g.next = h;
-h.next = i;
+// e.next = f;
+// f.next = g;
+// g.next = h;
+// h.next = i;
 
 function findMiddle(head) {
   // need to remember
@@ -53,5 +53,57 @@ function reverse(head) {
   return prev;
 }
 
+var reorderList = function (head) {
+  let temp = head;
+  let half = head;
+  // prev is for reversed link list head
+  let prev = null;
+  let tempHead = head;
+
+  //  finding middle node
+  while (temp.next && temp.next.next) {
+    temp = temp.next.next;
+    half = half.next;
+  }
+
+  // adding one bit in case of lists with even length!!
+  //here!!! need to figure out
+  if (temp.next) half = half.next;
+
+  // Now reverse the second half
+  while (half) {
+    temp = half.next;
+    half.next = prev;
+    prev = half;
+    half = temp;
+  }
+
+  half = prev;
+
+  // merge two linklist alternatively
+  while (tempHead && half) {
+    // console.log("--tempHead", tempHead);
+    console.log("--half", half);
+
+    temp = tempHead.next;
+    prev = half.next;
+
+    tempHead.next = half;
+    console.log("--temp", temp);
+    half.next = temp;
+
+    tempHead = temp;
+    half = prev;
+  }
+
+  if (tempHead && tempHead.next) {
+    tempHead.next.next = null;
+  }
+
+  return head;
+};
+
 // console.log(findMiddle(a));
-console.log(reverse(a));
+// console.log(reverse(a));
+
+console.log(reorderList(a));

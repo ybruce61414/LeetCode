@@ -15,6 +15,7 @@ var reorderList = function (head) {
   let half = head;
   // prev is for reversed link list head
   let prev = null;
+  let tempHead = head;
 
   //  finding middle node
   while (temp.next && temp.next.next) {
@@ -22,11 +23,13 @@ var reorderList = function (head) {
     half = half.next;
   }
 
-  if (half.next) half = half.next;
+  // adding one bit in case of lists with even length!!
+  //here!!! need to figure out
+  if (temp.next) half = half.next;
 
   // Now reverse the second half
   while (half) {
-    let temp = half.next;
+    temp = half.next;
     half.next = prev;
     prev = half;
     half = temp;
@@ -35,6 +38,21 @@ var reorderList = function (head) {
   half = prev;
 
   // merge two linklist alternatively
-  let tempHead = head;
-  while (tempHead && half) {}
+  while (tempHead && half) {
+    temp = tempHead.next;
+    prev = half.next;
+
+    tempHead.next = half;
+
+    half.next = temp;
+
+    tempHead = temp;
+    half = prev;
+  }
+
+  if (tempHead && tempHead.next) {
+    tempHead.next.next = null;
+  }
+
+  return head;
 };
