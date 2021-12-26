@@ -82,14 +82,10 @@ var reorderList = function (head) {
 
   // merge two linklist alternatively
   while (tempHead && half) {
-    // console.log("--tempHead", tempHead);
-    console.log("--half", half);
-
     temp = tempHead.next;
     prev = half.next;
 
     tempHead.next = half;
-    console.log("--temp", temp);
     half.next = temp;
 
     tempHead = temp;

@@ -13,41 +13,30 @@
  * @return {ListNode}
  */
 var reverseBetween = function (head, left, right) {
-  let pointer = head;
-  let count = 1;
-  let prev = null;
-  let before = null;
-  let after = null;
-  let rf;
-  let re;
+  let dummy = new ListNode(-1);
+  dummy.next = head;
 
-  if (!head.next) return head;
-
-  while (pointer) {
-    if (count === left - 1 && left - 1 > 0) before = pointer;
-    if (count === right + 1 && right + 1 > 0) after = pointer;
-
-    if (count === left) {
-      console.log("---left", pointer);
-      re = pointer;
-      prev = pointer;
-      pointer = pointer.next;
-      console.log("---leftprev", prev);
-    } else if (count > left && count <= right) {
-      if (count === right) rf = pointer;
-      console.log("-1---", count, pointer, prev);
-      let next = pointer.next;
-      pointer.next = prev;
-      prev = pointer;
-      pointer = next;
-    } else {
-      pointer = pointer.next;
-    }
-    count += 1;
+  //  find m-1 th node
+  let before = dummy;
+  for (let i = 0; i < left - 1; i++) {
+    before = before.next;
   }
 
-  if (before) before.next = rf;
-  if (after) re.next = after;
+  let prev = before;
+  let curr = before.next;
+  let tail = curr;
 
-  return !before ? prev : head;
+  // reverse
+  for (let i = left; i <= right; i++) {
+    let next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+
+  //  relink
+  before.next = prev;
+  tail.next = curr;
+
+  return dummy.next;
 };
