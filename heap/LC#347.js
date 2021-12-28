@@ -5,83 +5,6 @@
  * @return {number[]}
  */
 
-// class MinHeap {
-//   constructor() {
-//     this.values = [];
-//     this.size = 0;
-//   }
-//
-//   insert(val) {
-//     if (val === undefined) return;
-//     this.values.push(val);
-//     this.size += 1;
-//
-//     this._bubbleUp();
-//     return this.values;
-//   }
-//
-//   extractMin() {
-//     if (this.values.length === 0) return;
-//     this._swap(0, this.values.length - 1);
-//
-//     let min = this.values.pop();
-//     this.size -= 1;
-//
-//     this._trickleDown();
-//     return min;
-//   }
-//
-//   _bubbleUp() {
-//     let currIdx = this.values.length - 1;
-//     let parentIx;
-//
-//     while (currIdx > 0) {
-//       parentIx = Math.floor((currIdx - 1) / 2);
-//       if (this.values[parentIx].val <= this.values[currIdx].val) break;
-//       this._swap(currIdx, parentIx);
-//       currIdx = parentIx;
-//     }
-//   }
-//
-//   _trickleDown(start = 0) {
-//     let currIdx = start;
-//     let leftChildIdx, rightChildIdx, swapIdx;
-//
-//     while (true) {
-//       leftChildIdx = currIdx * 2 + 1;
-//       rightChildIdx = currIdx * 2 + 2;
-//       swapIdx = null;
-//
-//       if (
-//         leftChildIdx < this.size &&
-//         this.values[leftChildIdx].val < this.values[currIdx].val
-//       ) {
-//         swapIdx = leftChildIdx;
-//       }
-//       if (
-//         rightChildIdx < this.size &&
-//         ((swapIdx &&
-//           this.values[rightChildIdx].val < this.values[leftChildIdx].val) ||
-//           (!swapIdx &&
-//             this.values[rightChildIdx].val < this.values[currIdx].val))
-//       ) {
-//         swapIdx = rightChildIdx;
-//       }
-//
-//       if (!swapIdx) break;
-//       this._swap(swapIdx, currIdx);
-//       currIdx = swapIdx;
-//     }
-//   }
-//
-//   _swap(idx1, idx2) {
-//     [this.values[idx1], this.values[idx2]] = [
-//       this.values[idx2],
-//       this.values[idx1],
-//     ];
-//   }
-// }
-
 var topKFrequent = function (nums, k) {
   // brute force
   const freqCounter = {};
@@ -133,7 +56,7 @@ class MinHeap {
 
     while (currIdx > 0) {
       parentIx = Math.floor((currIdx - 1) / 2);
-      if (this.values[parentIx] <= this.values[currIdx]) break;
+      if (this.values[parentIx].val <= this.values[currIdx].val) break;
       this._swap(currIdx, parentIx);
       currIdx = parentIx;
     }
@@ -150,14 +73,16 @@ class MinHeap {
 
       if (
         leftChildIdx < this.size &&
-        this.values[leftChildIdx] < this.values[currIdx]
+        this.values[leftChildIdx].val < this.values[currIdx].val
       ) {
         swapIdx = leftChildIdx;
       }
       if (
         rightChildIdx < this.size &&
-        ((swapIdx && this.values[rightChildIdx] < this.values[leftChildIdx]) ||
-          (!swapIdx && this.values[rightChildIdx] < this.values[currIdx]))
+        ((swapIdx &&
+          this.values[rightChildIdx].val < this.values[leftChildIdx].val) ||
+          (!swapIdx &&
+            this.values[rightChildIdx].val < this.values[currIdx].val))
       ) {
         swapIdx = rightChildIdx;
       }
@@ -186,20 +111,19 @@ var topKFrequent1 = function (nums, k) {
     freqCounter[char] = (freqCounter[char] || 0) + 1;
   }
 
-  let freq = Object.values(freqCounter);
+  let keys = Object.keys(freqCounter);
 
-  for (let i = 0; i < freq.length; i++) {
-    minHeap.insert(freq[i]);
+  for (let i = 0; i < keys.length; i++) {
+    let key = keys[i];
+    minHeap.insert({ key, val: freqCounter[key] });
     if (minHeap.values.length > k) {
       minHeap.extractMin();
     }
   }
 
-  console.log("--", minHeap.values);
-
-  Object.keys(freqCounter).forEach((key) => {
-    if (minHeap.values.includes(freqCounter[key])) res.push(Number(key));
-  });
+  for (let i = 0; i < k; i++) {
+    res.push(Number(minHeap.extractMin().key));
+  }
 
   return res;
 };
