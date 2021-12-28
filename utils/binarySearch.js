@@ -53,20 +53,19 @@ const swap = (arr, idx1, idx2) => {
   return arr;
 };
 
-const partition = (arr, low, hight) => {
-  let swapIdx = low - 1;
-  let pivot = arr[hight].freq;
+const partition = (arr, start, end) => {
+  let swapIdx = start;
+  let pivot = arr[start].freq;
 
-  for (let i = low; i <= hight - 1; i++) {
+  for (let i = start + 1; i <= end; i++) {
     if (pivot > arr[i].freq) {
       swapIdx += 1;
       swap(arr, swapIdx, i);
     }
   }
 
-  swap(arr, hight, swapIdx + 1);
-
-  return swapIdx + 1;
+  swap(arr, swapIdx, start);
+  return swapIdx;
 };
 
 var topKFrequent = function (nums, k) {
@@ -82,7 +81,7 @@ var topKFrequent = function (nums, k) {
     res.push({ key, freq: freqCounter[key] });
   }
 
-  console.log("--res", res);
+  console.log("--res1", res);
 
   let pos = res.length - k;
   let left = 0;
@@ -92,7 +91,7 @@ var topKFrequent = function (nums, k) {
     let idx = partition(res, left, right);
 
     if (idx === pos) {
-      return;
+      break;
     } else if (idx > pos) {
       right = idx - 1;
     } else {
@@ -100,10 +99,10 @@ var topKFrequent = function (nums, k) {
     }
   }
 
-  return res;
+  return res.slice(res.length - k, res.length).map((item) => Number(item.key));
 };
 
 console.log(topKFrequent([5, 3, 1, 1, 1, 73, 73, 1], 2));
 // console.log(swap([10, 80, 30, 90, 40, 50, 70], 0, 1));
 
-// console.log(partition([10, 80, 30, 90, 40, 50, 70], 0, 6));
+// console.log(partition([80, 30, 10, 90, 40, 50, 70], 0, 6));
