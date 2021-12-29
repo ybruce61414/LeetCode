@@ -81,8 +81,6 @@ var topKFrequent = function (nums, k) {
     res.push({ key, freq: freqCounter[key] });
   }
 
-  console.log("--res1", res);
-
   let pos = res.length - k;
   let left = 0;
   let right = res.length - 1;

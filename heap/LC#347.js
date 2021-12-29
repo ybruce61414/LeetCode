@@ -101,7 +101,7 @@ class MinHeap {
   }
 }
 
-var topKFrequent1 = function (nums, k) {
+var topKFrequentHeap = function (nums, k) {
   const minHeap = new MinHeap();
   const freqCounter = {};
   let res = [];
@@ -128,7 +128,5 @@ var topKFrequent1 = function (nums, k) {
   return res;
 };
 
-console.log(topKFrequent1([1, 1, 1, 2, 2, 3], 2));
+console.log(topKFrequentHeap([1, 1, 1, 2, 2, 3], 2));
 // expected: [1,2]
-
-// console.log(topKFrequent1([1, 2], 2));
