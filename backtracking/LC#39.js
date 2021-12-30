@@ -8,7 +8,6 @@ var combinationSum = function (candidates, target) {
     }
 
     if (getSum(temp) === target) {
-      console.log(temp);
       res.push([...temp]);
       return;
     }
