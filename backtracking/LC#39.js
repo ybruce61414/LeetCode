@@ -30,13 +30,3 @@ const getSum = (arr) => {
 };
 
 console.log(combinationSum([2, 3, 6, 7], 7));
-
-// const hello = () => {
-//   return givestrnig();
-// };
-//
-// const givestrnig = () => {
-//   return "hello";
-// };
-//
-// console.log(hello());

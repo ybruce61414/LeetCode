@@ -6,22 +6,21 @@
  */
 var combine = function (n, k) {
   let answer = [];
-  let temp = [];
 
-  const DFShelper = (temp, idx) => {
-    if (temp.length === k) {
-      answer.push([...temp]);
+  const backtrack = (comb, idx) => {
+    if (comb.length === k) {
+      answer.push([...comb]);
       return;
     }
 
     for (let i = idx; i <= n; i++) {
-      temp.push(i);
-      DFShelper(temp, i + 1);
-      temp.pop();
+      comb.push(i);
+      backtrack(comb, i + 1);
+      comb.pop();
     }
   };
 
-  DFShelper(temp, 1);
+  backtrack([], 1);
   return answer;
 };
 console.log(combine(4, 2));
