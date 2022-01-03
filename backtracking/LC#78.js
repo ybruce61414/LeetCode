@@ -35,6 +35,23 @@ const combine = (arr, k) => {
   return res;
 };
 
+var subsets1 = function (nums) {
+  let res = [];
+
+  const backtrack = (idx, subSets) => {
+    res.push([...subSets]);
+
+    for (let i = idx; i < nums.length; i++) {
+      subSets.push(nums[i]);
+      backtrack(i + 1, subSets);
+      subSets.pop();
+    }
+  };
+
+  backtrack(0, []);
+  return res;
+};
+
 console.log(subsets([1, 2, 3]));
 // expected: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 
