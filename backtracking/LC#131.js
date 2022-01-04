@@ -8,28 +8,26 @@ var partition = function (s) {
 
   const backtrack = (start, temp) => {
     if (start === s.length) {
-      res =
+      res.push([...temp]);
+      return;
     }
 
     for (let i = start; i < s.length; i++) {
-      if (isPalindrome(s.substr(start, i+1))) {
-        temp.push(s.substr(i, i+1))
-        backtrack()
+      if (isPalindrome(s, start, i)) {
+        temp.push(s.substring(start, i + 1));
+        backtrack(i + 1, temp);
+        temp.pop();
       }
     }
   };
 
   backtrack(0, []);
+
   return res;
 };
 
-console.log(partition("aab"));
-// Output: [["a","a","b"],["aa","b"]]
-
-const isPalindrome = (str) => {
-  let left = 0;
-  let right = str.length - 1;
-
+function isPalindrome(str, left, right) {
+  console.log(left, right);
   while (right > left) {
     if (str[left] !== str[right]) return false;
     left += 1;
@@ -37,6 +35,7 @@ const isPalindrome = (str) => {
   }
 
   return true;
-};
+}
 
-console.log(isPalindrome(""));
+console.log(partition("aab"));
+// Output: [["a","a","b"],["aa","b"]]
