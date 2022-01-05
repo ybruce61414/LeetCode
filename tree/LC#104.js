@@ -28,3 +28,11 @@ var maxDepth = function (root) {
   dive(root, 1);
   return maxD;
 };
+
+var maxDepthBetter = function (root) {
+  if (!root) return 0;
+  let left = maxDepthBetter(root.left);
+  let right = maxDepthBetter(root.right);
+
+  return Math.max(left, right) + 1;
+};
