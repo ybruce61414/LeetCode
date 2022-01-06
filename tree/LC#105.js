@@ -32,3 +32,25 @@ var buildTree = function (preorder, inorder) {
 
   return node;
 };
+
+var buildTreeAnswer = function (preorder, inorder) {
+  const helper = (pl, pr, il, ir) => {
+    if (pl > pr || il > ir) return null;
+
+    const node = new TreeNode(preorder[pl]);
+
+    for (let i = il; i <= ir; i++) {
+      if (preorder[pl] === inorder[i]) {
+        node.left = helper(pl + 1, i - il + pl, il, i - 1);
+        node.right = helper(pl + i + 1 - il, pr, i + 1, ir);
+        break;
+      }
+    }
+    return node;
+  };
+
+  return helper(0, preorder.length - 1, 0, inorder.length - 1);
+};
+
+// corner case: [1,2,3]
+// [3,2,1]
