@@ -11,7 +11,7 @@
  * @param {TreeNode} root
  * @return {void} Do not return anything, modify root in-place instead.
  */
-var flatten = function (root) {
+var flatten1 = function (root) {
   let res = [];
   let parent = root;
 
@@ -33,6 +33,24 @@ var flatten = function (root) {
     parent.left = null;
     parent = parent.right;
   }
+
+  return root;
+};
+
+var flatten = function (root) {
+  let prevNode = null;
+
+  const dfs = (node) => {
+    if (!node) return;
+    dfs(node.right);
+    dfs(node.left);
+
+    node.right = prevNode;
+    node.left = null;
+    prevNode = node;
+  };
+
+  dfs(root);
 
   return root;
 };
