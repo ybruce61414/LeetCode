@@ -121,3 +121,24 @@ var kthSmallest1 = function (root, k) {
   dfs(root);
   return res[k - 1];
 };
+
+var kthSmallest1Optimization = function (root, k) {
+  let res;
+  let count = k;
+
+  const inorder = (node) => {
+    if (!node) return;
+
+    inorder(node.left);
+
+    count -= 1;
+    if (count === 0) {
+      res = node.val;
+      return;
+    }
+    inorder(node.right);
+  };
+
+  inorder(root);
+  return res;
+};
