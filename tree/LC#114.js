@@ -37,7 +37,8 @@ var flatten1 = function (root) {
   return root;
 };
 
-var flatten = function (root) {
+var flatten2 = function (root) {
+  //preorder backward
   let prevNode = null;
 
   const dfs = (node) => {
@@ -52,5 +53,23 @@ var flatten = function (root) {
 
   dfs(root);
 
+  return root;
+};
+
+var flatten3 = function (root) {
+  let stack = [root];
+  let temp = null;
+
+  while (stack.length > 0) {
+    let ele = stack.pop();
+    if (ele && ele.right) stack.push(ele.right);
+    if (ele && ele.left) stack.push(ele.left);
+
+    if (temp) {
+      temp.right = ele;
+      temp.left = null;
+    }
+    temp = ele;
+  }
   return root;
 };
