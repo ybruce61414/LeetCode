@@ -15,15 +15,13 @@
  */
 var lowestCommonAncestor_iter = function (root, p, q) {
   //  iteration
-  const pVal = p.val;
-  const qVal = q.val;
   let currNode = root;
 
   while (currNode) {
     let currVal = currNode.val;
-    if (pVal < currVal && qVal < currVal) {
+    if (p.val < currVal && q.val < currVal) {
       currNode = currNode.left;
-    } else if (pVal > currVal && qVal > currVal) {
+    } else if (p.val > currVal && q.val > currVal) {
       currNode = currNode.right;
     } else {
       return currNode;
@@ -33,20 +31,14 @@ var lowestCommonAncestor_iter = function (root, p, q) {
 
 var lowestCommonAncestor_recur = function (root, p, q) {
   //  recursion
-  if (q.val === root.val || p.val === root.val) {
-    return root;
-  }
-
-  if (
-    (root.val < q.val && p.val < root.val) ||
-    (root.val > q.val && p.val > root.val)
-  ) {
-    return root;
-  }
 
   if (p.val < root.val && q.val < root.val) {
-    return lowestCommonAncestor(root.left, p, q);
-  } else {
-    return lowestCommonAncestor(root.right, p, q);
+    lowestCommonAncestor_recur(root.left, p, q);
   }
+
+  if (p.val > root.val && q.val > root.val) {
+    lowestCommonAncestor_recur(root.right, p, q);
+  }
+
+  return root;
 };
