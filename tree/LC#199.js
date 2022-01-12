@@ -11,4 +11,19 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var rightSideView = function (root) {};
+var rightSideView = function (root) {
+  const res = [];
+
+  const dfs = (node, level) => {
+    if (!node) return;
+    if (res[level] === undefined) {
+      res.push(node.val);
+    }
+    if (!node.left && !node.right) return;
+    dfs(node.right, level + 1);
+    dfs(node.left, level + 1);
+  };
+
+  dfs(root, 0);
+  return res;
+};
