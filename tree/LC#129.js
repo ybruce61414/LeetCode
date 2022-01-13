@@ -50,6 +50,7 @@ var sumNumbers2 = function (root) {
   let res = 0;
 
   const dfs = (node, curr) => {
+    // note:  curr is  local variable
     if (!node) return null;
     curr += node.val.toString();
 
