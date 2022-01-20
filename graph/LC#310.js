@@ -5,53 +5,35 @@
  * @return {number[]}
  */
 var findMinHeightTrees = function (n, edges) {
+  if (n === 1) return [0];
   const adjList = buildAdjList(n, edges);
-  let min = Infinity;
+  const degree = adjList.map((vertices) => vertices.length);
+  const queue = [];
   let res = [];
 
-  for (let i = 0; i < n; i++) {
-    //bfs
-    let queue = [{ node: i, level: 0 }];
-    let visited = { [i]: true };
-    let maxLevel = 0;
+  //initialize queue
+  degree.forEach((value, index) => {
+    if (value === 1) queue.push(index);
+  });
 
-    while (queue.length > 0) {
-      let curr = queue.shift();
-      const { node, level } = curr;
-      maxLevel = Math.max(maxLevel, level);
+  while (queue.length > 0) {
+    const len = queue.length;
 
-      adjList[node].forEach((neighbor) => {
-        if (!visited[neighbor]) {
-          visited[neighbor] = true;
-          queue.push({ node: neighbor, level: level + 1 });
-        }
-      });
+    res = [];
+
+    for (let i = 0; i < len; i++) {
+      const dequeue = queue.shift();
+      res.push(dequeue);
+
+      degree[dequeue] -= 1;
+      for (let neighbor of adjList[dequeue]) {
+        degree[neighbor] -= 1;
+        if (degree[neighbor] === 1) queue.push(neighbor);
+      }
     }
-
-    min = Math.min(min, maxLevel);
   }
 
-  // //bfs
-  // let queue = [{ node: 1, level: 0 }];
-  // let visited = { 1: true };
-  // let maxLevel = 0;
-  // // const res = [];
-  //
-  // while (queue.length > 0) {
-  //   let curr = queue.shift();
-  //   const { node, level } = curr;
-  //   // res.push(node);
-  //   maxLevel = Math.max(maxLevel, level);
-  //
-  //   adjList[node].forEach((neighbor) => {
-  //     if (!visited[neighbor]) {
-  //       visited[neighbor] = true;
-  //       queue.push({ node: neighbor, level: level + 1 });
-  //     }
-  //   });
-  // }
-
-  return min;
+  return res;
 };
 
 const buildAdjList = (n, edges) => {
@@ -72,3 +54,36 @@ console.log(
     [1, 3],
   ])
 );
+
+console.log(
+  findMinHeightTrees(6, [
+    [3, 0],
+    [3, 1],
+    [3, 2],
+    [3, 4],
+    [5, 4],
+  ])
+);
+console.log(
+  findMinHeightTrees(6, [
+    [0, 1],
+    [0, 2],
+    [0, 3],
+    [3, 4],
+    [4, 5],
+  ])
+);
+
+console.log(
+  findMinHeightTrees(6, [
+    [0, 1],
+    [0, 2],
+    [0, 3],
+    [3, 4],
+    [4, 5],
+  ])
+);
+
+console.log(findMinHeightTrees(2, [[0, 1]]));
+
+console.log(findMinHeightTrees(1, []));

@@ -24,11 +24,16 @@ var pathSum = function (root, targetSum) {
       return;
     }
 
-    for (let child of [node.left, node.right]) {
-      temp.push(node.val);
-      backtrack(child, temp, target - node.val);
-      temp.pop();
-    }
+    // for (let child of [node.left, node.right]) {
+    //   temp.push(node.val);
+    //   backtrack(child, temp, target - node.val);
+    //   temp.pop();
+    // }
+
+    temp.push(node.val);
+    backtrack(node.left, temp, target - node.val);
+    backtrack(node.right, temp, target - node.val);
+    temp.pop();
   };
 
   backtrack(root, [], targetSum);
