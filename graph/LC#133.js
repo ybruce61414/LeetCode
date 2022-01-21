@@ -11,7 +11,7 @@
  * @param {Node} node
  * @return {Node}
  */
-var cloneGraph = function (node) {
+var cloneGraphBFS = function (node) {
   if (!node) return null;
   const cloneStartNode = new Node(node.val);
   const visited = { [node.val]: cloneStartNode };
@@ -38,7 +38,7 @@ var cloneGraph = function (node) {
   return cloneStartNode;
 };
 
-var cloneGraph1 = function (node) {
+var cloneGraphBFS1 = function (node) {
   if (!node) return null;
   const cloneStartNode = new Node(node.val);
   const visited = { [node.val]: cloneStartNode };
@@ -59,4 +59,26 @@ var cloneGraph1 = function (node) {
     }
   }
   return cloneStartNode;
+};
+
+var cloneGraphDFS = function (node) {
+  const visited = {};
+
+  const dfs = (node) => {
+    if (!node) return null;
+    const { val, neighbors } = node;
+
+    if (visited[val]) return visited[val];
+
+    const clone = new Node(val);
+    visited[val] = clone;
+
+    for (let neighbor of neighbors) {
+      clone.neighbors.push(dfs(neighbor));
+    }
+
+    return clone;
+  };
+
+  return dfs(node);
 };
