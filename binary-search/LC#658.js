@@ -5,28 +5,43 @@
  * @param {number} x
  * @return {number[]}
  */
-var findClosestElements = function (arr, k, x) {
+var findClosestElements0 = function (arr, k, x) {
+  // linear time complexity
+  let count = arr.length - k;
   let left = 0;
   let right = arr.length - 1;
 
-  // first greater or equal
+  for (let i = 0; i < count; i++) {
+    let ld = x - arr[left];
+    let rd = arr[right] - x;
+
+    if (rd >= ld) {
+      right -= 1;
+    } else {
+      left += 1;
+    }
+  }
+
+  return arr.slice(left, right + 1);
+};
+
+var findClosestElements = function (arr, k, x) {
+  let left = 0;
+  let right = arr.length - k;
+
   while (right > left) {
     let mid = Math.floor((left + right) / 2);
-    if (arr[mid] === x) {
-      left = mid;
-      break;
-    } else if (arr[mid] < x) {
+    if (x - arr[mid] > arr[mid + k] - x) {
       left = mid + 1;
     } else {
       right = mid;
     }
   }
-
-  for (let i = 0; i < k; i++) {}
-
-  return left;
+  return arr.slice(left, left + k);
 };
 
-// console.log(findClosestElements([1, 2, 3, 4, 5], 4, 3));
-// console.log(findClosestElements([1, 2, 3, 4, 5], 4, -1));
-// console.log(findClosestElements([1, 2, 4, 5, 10, 34], 4, 6));
+console.log(findClosestElements([1, 2, 3, 4, 5], 4, 3));
+console.log(findClosestElements([1, 2, 3, 4, 5, 6, 7], 3, 5));
+
+console.log(findClosestElements([1, 1, 2, 2, 2, 2, 2, 3, 3], 3, 3));
+// [2,3,3]
