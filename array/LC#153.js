@@ -30,8 +30,8 @@ const findPivot = (arr) => {
   return right;
 };
 
-// console.log(findPivot([2, 1]));
-// console.log(findPivot([1, 2, 3, 4, 5]));
+// console.log(findRotatedPivot([2, 1]));
+// console.log(findRotatedPivot([1, 2, 3, 4, 5]));
 
 // console.log(findMin([11, 13, 15, 17]));
 console.log(findMin([1, 2, 3, 4, 5]));
