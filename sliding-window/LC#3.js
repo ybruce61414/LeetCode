@@ -41,5 +41,28 @@ var lengthOfLongestSubstring2 = function (s) {
   return max;
 };
 
-// console.log(lengthOfLongestSubstring2("abba"));
-console.log(lengthOfLongestSubstring2("abcabcbb"));
+var lengthOfLongestSubstring3 = function (s) {
+  // template and most efficient way
+  let map = new Map();
+  let left = 0;
+  let right = 0;
+  let max = 0;
+
+  while (right < s.length) {
+    let char = s[right];
+    map.set(char, (map.get(char) || 0) + 1);
+
+    while (map.get(char) > 1) {
+      map.set(s[left], map.get(s[left]) - 1);
+      left += 1;
+    }
+    max = Math.max(max, right - left + 1);
+    right += 1;
+  }
+
+  return max;
+};
+
+console.log(lengthOfLongestSubstring3("abba"));
+console.log(lengthOfLongestSubstring3("abcabcbb"));
+console.log(lengthOfLongestSubstring3("abcbdav"));
