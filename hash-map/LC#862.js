@@ -20,29 +20,59 @@ var shortestSubarray0 = function (nums, k) {
   return min === Infinity ? -1 : min;
 };
 
+class MQ {
+  constructor() {
+    this.val = [];
+  }
+
+  peekFirst() {
+    return this.val[0];
+  }
+
+  removeFirst() {
+    return this.val.shift();
+  }
+
+  enqueue(val) {
+    this.val.push(val);
+  }
+
+  peekLast() {
+    return this.val[this.val.length - 1];
+  }
+
+  removeLast() {
+    return this.val.pop();
+  }
+
+  isEmpty() {
+    return this.val.length === 0;
+  }
+}
+
 var shortestSubarray = function (nums, k) {
-  // pending
-  let preSum = new Array(nums.length).fill(0);
-  let mq = [];
-  let min = -1;
+  let preSum = new Array(nums.length + 1);
+  let mq = new MQ();
+  let minLen = Infinity;
 
-  for (let i = 0; i < nums.length; i++) {
-    preSum[i] += (preSum[i - 1] || 0) + nums[i];
+  preSum[0] = 0;
+  for (let i = 1; i <= nums.length; i++) {
+    preSum[i] = preSum[i - 1] + nums[i - 1];
   }
 
-  for (let i = 0; i < nums.length; i++) {
-    while (mq.length !== 0 && preSum[i] < preSum[mq[mq.length - 1]]) {
-      mq.pop();
+  for (let i = 0; i <= preSum.length; i++) {
+    while (!mq.isEmpty() && preSum[i] <= preSum[mq.peekLast()]) {
+      mq.removeLast();
     }
 
-    while (mq.length !== 0 && preSum[i] - preSum[mq[0]] >= k) {
-      min = Math.min(min, i - mq.shift());
+    while (!mq.isEmpty() && preSum[i] - preSum[mq.peekFirst()] >= k) {
+      minLen = Math.min(minLen, i - mq.removeFirst());
     }
 
-    mq.push(i);
+    mq.enqueue(i);
   }
 
-  return min;
+  return minLen === Infinity ? -1 : minLen;
 };
 
 console.log(shortestSubarray([2, -1, 2], 3));
