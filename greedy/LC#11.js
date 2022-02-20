@@ -4,6 +4,7 @@
  * @return {number}
  */
 var maxArea1 = function (height) {
+  // brute force
   let max = 0;
   for (let i = 0; i < height.length; i++) {
     for (let j = i + 1; j < height.length; j++) {
@@ -22,7 +23,7 @@ var maxArea2 = function (height) {
 
   while (right > left) {
     const currArea = Math.min(height[left], height[right]) * (right - left);
-    maxArea = Math.max(max, currArea);
+    maxArea = Math.max(maxArea, currArea);
 
     if (height[left] > height[right]) {
       right = right - 1;
