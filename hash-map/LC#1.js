@@ -4,6 +4,22 @@
  * @param {number} target
  * @return {number[]}
  */
+var twoSum0 = function (nums, target) {
+  //  using hash map to memorize data
+  let numsVisited = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    const complement = target - num;
+
+    if (complement in numsVisited) {
+      return [i, numsVisited[complement]];
+    } else {
+      numsVisited[num] = i;
+    }
+  }
+};
+
 var twoSum = function (nums, target) {
   let map = new Map();
 
