@@ -3,7 +3,7 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var maxAreaOfIslandDFS = function (grid) {
+var maxAreaOfIslandDFS1 = function (grid) {
   //dfs
   let max = 0;
   let tempArea = 0;
@@ -33,6 +33,7 @@ var maxAreaOfIslandDFS = function (grid) {
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[0].length; j++) {
       if (grid[i][j] !== 0) {
+        // 紀錄上一次的temparea
         max = Math.max(max, tempArea);
         tempArea = 0;
         dfs(i, j);
@@ -44,6 +45,41 @@ var maxAreaOfIslandDFS = function (grid) {
 };
 
 var maxAreaOfIsland = function (grid) {
+  //dfs
+  let max = 0;
+
+  const dfs = (row, col) => {
+    if (
+      row < 0 ||
+      col < 0 ||
+      row >= grid.length ||
+      col >= grid[0].length ||
+      grid[row][col] === 0
+    ) {
+      return 0;
+    }
+
+    grid[row][col] = 0;
+
+    return (
+      1 +
+      dfs(row - 1, col) +
+      dfs(row, col - 1) +
+      dfs(row + 1, col) +
+      dfs(row, col + 1)
+    );
+  };
+
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[0].length; j++) {
+      max = Math.max(max, dfs(i, j));
+    }
+  }
+
+  return max;
+};
+
+var maxAreaOfIslandBFS = function (grid) {
   //bfs
   let rowLen = grid.length;
   let colLen = grid[0].length;
