@@ -3,7 +3,8 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var maxAreaOfIsland = function (grid) {
+var maxAreaOfIslandDFS = function (grid) {
+  //dfs
   let max = 0;
   let tempArea = 0;
 
@@ -40,6 +41,52 @@ var maxAreaOfIsland = function (grid) {
   }
 
   return Math.max(max, tempArea);
+};
+
+var maxAreaOfIsland = function (grid) {
+  //bfs
+  let rowLen = grid.length;
+  let colLen = grid[0].length;
+  let res = 0;
+  let directions = [
+    [-1, 0],
+    [0, -1],
+    [1, 0],
+    [0, 1],
+  ];
+
+  for (let i = 0; i < rowLen; i++) {
+    for (let j = 0; j < colLen; j++) {
+      if (grid[i][j] === 0) continue;
+
+      let queue = [];
+      let area = 0;
+      queue.push([i, j]);
+
+      while (queue.length > 0) {
+        let [nr, nc] = queue.shift();
+        if (
+          nr < 0 ||
+          nc < 0 ||
+          nr >= rowLen ||
+          nc >= colLen ||
+          grid[nr][nc] === 0
+        ) {
+          continue;
+        }
+
+        area += 1;
+        grid[nr][nc] = 0;
+
+        for (let direction of directions) {
+          queue.push([nr + direction[0], nc + direction[1]]);
+        }
+      }
+      res = Math.max(res, area);
+    }
+  }
+
+  return res;
 };
 
 console.log(
