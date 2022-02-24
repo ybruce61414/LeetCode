@@ -12,37 +12,30 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-  let plus = Infinity;
-  let head;
-  let prev;
-  let ll1 = l1;
-  let ll2 = l2;
+  let prev = null;
+  let newHead = null;
+  let prevRem = 0;
 
-  while (ll1 || ll2 || plus > 0) {
-    let sum =
-      (ll1?.val || 0) + (ll2?.val || 0) + (plus === Infinity ? 0 : plus);
+  while (l1 || l2) {
+    let sum = (l1?.val || 0) + (l2?.val || 0) + prevRem;
+    let rem = sum % 10;
+    let quo = Math.floor(sum / 10);
 
-    plus = ~~(sum / 10);
+    let node = new ListNode(rem);
 
-    if (!ll1 && !ll2) {
-      prev.next = new ListNode(sum);
-    }
+    if (!newHead) newHead = node;
+    if (prev) prev.next = node;
+    prev = node;
+    prevRem = quo;
 
-    if (ll1) {
-      prev = ll1;
-      ll1.val = sum % 10;
-      ll1 = ll1.next;
-      head = l1;
-    }
-
-    if (ll2) {
-      prev = ll2;
-      ll2.val = sum % 10;
-      ll2 = ll2.next;
-      head = l2;
-    }
+    l1 = l1?.next;
+    l2 = l2?.next;
   }
-  return head;
+
+  if (prevRem > 0) {
+    prev.next = new ListNode(prevRem);
+  }
+  return newHead;
 };
 
 console.log(~~(3 / 5));
