@@ -12,6 +12,21 @@
  * @param {ListNode} head
  * @return {boolean}
  */
+var hasCycle0 = function (head) {
+  // using hashMap
+  const set = new Set();
+
+  let cur = head;
+
+  while (cur) {
+    if (set.has(cur)) return true;
+    set.add(cur);
+    cur = cur.next;
+  }
+
+  return false;
+};
+
 var hasCycle = function (head) {
   let slow = head;
   let fast = head;
