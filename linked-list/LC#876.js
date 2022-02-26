@@ -1,7 +1,7 @@
 // 876. Middle of the Linked List
 var middleNode = function (head) {
   let count = 0;
-  let middle = 0;
+  let middle;
   let curr = head;
 
   while (curr) {
@@ -20,4 +20,18 @@ var middleNode = function (head) {
   }
 
   return curr;
+};
+
+var middleNode = function (head) {
+  let dummy = new ListNode(0);
+  dummy.next = head;
+  let fast = dummy;
+  let slow = dummy;
+
+  while (fast && fast.next && fast.next.next) {
+    fast = fast.next.next;
+    slow = slow.next;
+  }
+
+  return slow.next;
 };
