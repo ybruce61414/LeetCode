@@ -74,3 +74,22 @@ var swapPairs3 = function (head) {
 
   return dummy.next;
 };
+
+//final version
+var swapPairs = function (head) {
+  if (!head || !head.next) return head;
+
+  let dummy = new ListNode(-1);
+  dummy.next = head;
+  let cur = dummy;
+
+  while (cur.next && cur.next.next) {
+    let n1 = cur.next;
+    let n2 = cur.next.next;
+    cur.next = n2;
+    n1.next = n2.next;
+    n2.next = n1;
+    cur = n1;
+  }
+  return dummy.next;
+};
