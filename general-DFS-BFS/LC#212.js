@@ -22,6 +22,16 @@ class Trie {
     node.word = word;
   }
 
+  search(word) {
+    let node = this.root;
+    for (let i = 0; i < word.length; i++) {
+      let char = word[i];
+      if (!node[char]) return false;
+      node = node[char];
+    }
+    return true;
+  }
+
   remove(word) {
     let node = this.root;
 
@@ -43,6 +53,12 @@ var findWords = function (board, words) {
   const trie = new Trie();
   const m = board.length;
   const n = board[0].length;
+  const directions = [
+    [-1, 0],
+    [0, -1],
+    [1, 0],
+    [0, 1],
+  ];
   let res = [];
 
   for (let word of words) {
@@ -51,7 +67,6 @@ var findWords = function (board, words) {
 
   const dfs = (row, col, node) => {
     if (node.word) {
-      console.log("---w", node);
       res.push(node.word);
       trie.remove(node.word);
     }
@@ -66,14 +81,12 @@ var findWords = function (board, words) {
     let nextNode = node[char];
 
     board[row][col] = "*";
-    console.log("-going t--", nextNode, trie);
-    dfs(row - 1, col, nextNode);
-    console.log("-going l--", nextNode, trie);
-    dfs(row, col - 1, nextNode);
-    console.log("-going b--", nextNode, trie);
-    dfs(row + 1, col, nextNode);
-    console.log("-going r--", nextNode, trie);
-    dfs(row, col + 1, nextNode);
+    for (let direction of directions) {
+      if (nextNode.word && !trie.search(nextNode.word)) break;
+      let nextRow = row + direction[0];
+      let nextCol = col + direction[1];
+      dfs(nextRow, nextCol, nextNode);
+    }
     board[row][col] = char;
   };
 
