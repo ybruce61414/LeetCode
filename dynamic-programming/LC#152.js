@@ -20,3 +20,4 @@ var maxProduct = function (nums) {
 };
 
 console.log(maxProduct([-2, 3, -4]));
+console.log(maxProduct([-1, 0, -2, -4]));
