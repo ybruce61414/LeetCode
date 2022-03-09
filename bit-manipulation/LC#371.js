@@ -7,15 +7,16 @@
 var getSum = function (a, b) {
   //need to figure out the negative num in js
   let res = a;
-  let temp = b;
+  let carry = b;
 
-  while (temp !== 0) {
-    let carry = (res & temp) << 1;
-    res = res ^ temp;
-    temp = carry;
+  while (carry !== 0) {
+    let temp = (res & carry) << 1;
+    res = res ^ carry;
+    carry = temp;
     //console.log(res,temp)
   }
 
   return res;
 };
+
 console.log(getSum(1, 2));
