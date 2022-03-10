@@ -80,7 +80,8 @@ class MinHeap {
   }
 }
 
-var findKthLargest = function (nums, k) {
+var findKthLargest0 = function (nums, k) {
+  // heap
   const minHeap = new MinHeap();
 
   for (let i = 0; i < nums.length; i++) {
@@ -91,6 +92,45 @@ var findKthLargest = function (nums, k) {
   }
 
   return minHeap.extractMin();
+};
+
+var findKthLargest = function (nums, k) {
+  // quick select(partition)
+  let target = nums.length - k;
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (true) {
+    //kind of like a binary search
+    let idx = partition(nums, left, right);
+    if (idx === target) {
+      return nums[idx];
+    } else if (idx < target) {
+      left = idx + 1;
+    } else {
+      right = idx - 1;
+    }
+  }
+};
+
+const partition = (arr, start, end) => {
+  let pivot = arr[start];
+  let swapIdx = start;
+
+  const swap = (idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  };
+
+  for (let i = start + 1; i <= end; i++) {
+    if (arr[i] < pivot) {
+      swapIdx += 1;
+      swap(i, swapIdx);
+    }
+  }
+
+  swap(start, swapIdx);
+
+  return swapIdx;
 };
 
 console.log(findKthLargest([3, 2, 1, 5, 6, 4], 2));
