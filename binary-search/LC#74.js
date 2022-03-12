@@ -34,7 +34,7 @@ var searchMatrix0 = function (matrix, target) {
   return matrix[targetRow][left] === target;
 };
 
-var searchMatrix = function (matrix, target) {
+var searchMatrix1 = function (matrix, target) {
   let left = 0;
   let right = matrix.length - 1;
 
@@ -97,3 +97,36 @@ const findFirstSmallerOrEqual = (arr, tar) => {
 };
 
 console.log(findFirstSmallerOrEqual([1, 10, 23], 3));
+
+var searchMatrix3 = function (matrix, target) {
+  let left = 0;
+  let right = matrix.length - 1;
+
+  //firstGreaterOrEqual
+  while (right > left) {
+    let mid = Math.floor((left + right) / 2);
+    if (matrix[mid][matrix[0].length - 1] >= target) {
+      right = mid;
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  return binarySearch(matrix[left], target);
+};
+
+const binarySearch = (arr, tar) => {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    if (arr[mid] === tar) return true;
+    if (arr[mid] < tar) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return false;
+};
