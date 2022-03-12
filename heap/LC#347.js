@@ -128,5 +128,53 @@ var topKFrequentHeap = function (nums, k) {
   return res;
 };
 
-console.log(topKFrequentHeap([1, 1, 1, 2, 2, 3], 2));
+var topKFrequent3 = function (nums, k) {
+  let map = new Map();
+  let res = [];
+
+  for (let num of nums) {
+    map.set(num, (map.get(num) || 0) + 1);
+  }
+
+  for (let [key, freq] of map.entries()) {
+    res.push({ key, freq });
+  }
+
+  let target = res.length - k;
+  let left = 0;
+  let right = res.length - 1;
+
+  while (true) {
+    let idx = partition(res, "freq", left, right);
+    if (idx === target) break;
+    if (idx < target) {
+      left = idx + 1;
+    } else {
+      right = idx - 1;
+    }
+  }
+  console.log(res);
+
+  return res.slice(target, res.length).map((obj) => obj.key);
+};
+
+const partition = (arr, prop, start, end) => {
+  let pivot = arr[start][prop];
+  let swapIdx = start;
+
+  const swap = (idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  };
+
+  for (let i = start + 1; i <= end; i++) {
+    if (arr[i][prop] < pivot) {
+      swapIdx += 1;
+      swap(i, swapIdx);
+    }
+  }
+  swap(start, swapIdx);
+  return swapIdx;
+};
+
+console.log(topKFrequent3([1, 1, 1, 2, 2, 3], 2));
 // expected: [1,2]
