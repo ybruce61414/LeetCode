@@ -3,7 +3,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permuteUnique = function (nums) {
+var permuteUnique0 = function (nums) {
   let freqCounter = {};
   let res = [];
 
@@ -33,6 +33,32 @@ var permuteUnique = function (nums) {
 
   backtrack([], freqCounter);
 
+  return res;
+};
+
+var permuteUnique = function (nums) {
+  //better sol
+  nums.sort((a, b) => a - b);
+  let res = [];
+
+  const backtrack = (nums, temp) => {
+    if (nums.length === 0) {
+      res.push([...temp]);
+      return;
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+      if (i > 0 && nums[i] === nums[i - 1]) continue;
+      let copyNums = [...nums];
+      copyNums.splice(i, 1);
+
+      temp.push(nums[i]);
+      backtrack(copyNums, temp);
+      temp.pop();
+    }
+  };
+
+  backtrack(nums, []);
   return res;
 };
 
