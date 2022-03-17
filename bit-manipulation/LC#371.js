@@ -10,10 +10,14 @@ var getSum = function (a, b) {
   let carry = b;
 
   while (carry !== 0) {
+    //進位不是0才停止
     let temp = (res & carry) << 1;
+    //計算是否進位
+
     res = res ^ carry;
+    //計算不用盡位的部分
+
     carry = temp;
-    //console.log(res,temp)
   }
 
   return res;

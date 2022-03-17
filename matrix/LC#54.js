@@ -106,3 +106,44 @@ console.log(
 //     [11, 12, 13, 14, 15],
 //   ])
 // );
+
+var spiralOrder = function (matrix) {
+  //dfs
+  let m = matrix.length;
+  let n = matrix[0].length;
+  let res = [];
+
+  const directions = [
+    [0, 1],
+    [1, 0],
+    [0, -1],
+    [-1, 0],
+  ];
+
+  const dfs = (row, col, idx) => {
+    let newRow = row + directions[idx % 4][0];
+    let newCol = col + directions[idx % 4][1];
+
+    if (
+      newRow < 0 ||
+      newCol < 0 ||
+      newRow >= m ||
+      newCol >= n ||
+      matrix[newRow][newCol] === "*"
+    ) {
+      if (res.length === m * n - 1) {
+        res.push(matrix[row][col]);
+        return;
+      }
+      dfs(row, col, idx + 1);
+    } else {
+      res.push(matrix[row][col]);
+      matrix[row][col] = "*";
+      dfs(newRow, newCol, idx);
+    }
+  };
+
+  dfs(0, 0, 0);
+
+  return res;
+};

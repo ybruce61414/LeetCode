@@ -3,7 +3,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function (nums) {
+var permute0 = function (nums) {
   let res = [];
 
   const backtrack = (nums, res, temp) => {
@@ -22,6 +22,27 @@ var permute = function (nums) {
 
   backtrack(nums, res, []);
 
+  return res;
+};
+
+var permute = function (nums) {
+  let res = [];
+
+  const backtrack = (nums, temp) => {
+    if (nums.length === 0) {
+      res.push([...temp]);
+      return;
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+      let newNums = nums.filter((item) => item !== nums[i]);
+      temp.push(nums[i]);
+      backtrack(newNums, temp);
+      temp.pop();
+    }
+  };
+
+  backtrack(nums, []);
   return res;
 };
 
