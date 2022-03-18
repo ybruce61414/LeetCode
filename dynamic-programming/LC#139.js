@@ -25,6 +25,30 @@ var wordBreak = function (s, wordDict) {
   return dp[0];
 };
 
+var wordBreak2 = function (s, wordDict) {
+  // dfs
+  let wordSet = new Set(wordDict);
+  let memo = new Array(s.length);
+
+  const dfs = (idx) => {
+    let start = idx;
+    if (idx === s.length) return true;
+    if (memo[idx] !== undefined) return memo[idx];
+
+    for (let i = start; i < s.length; i++) {
+      let pstr = s.slice(start, i + 1);
+      if (wordSet.has(pstr) && dfs(i + 1)) {
+        memo[start] = true;
+        return true;
+      }
+    }
+    memo[start] = false;
+    return false;
+  };
+
+  return dfs(0);
+};
+
 console.log(wordBreak("leetcode", ["leet", "code"]));
 
 // let str = "abc";
