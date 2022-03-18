@@ -31,5 +31,17 @@ var canJump2 = function (nums) {
   }
 };
 
+var canJump3 = function (nums) {
+  let prev = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    if (i > prev) return false;
+    prev = Math.max(prev, i + nums[i]);
+    if (prev >= nums.length - 1) return true;
+  }
+
+  return true;
+};
+
 // console.log(canJump1([3, 2, 1, 0, 4]));
 console.log(canJump2([2, 3, 1, 1, 4]));

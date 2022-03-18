@@ -18,6 +18,7 @@ var combinationSum2 = function (candidates, target) {
     }
 
     for (let i = idx; i < candidates.length; i++) {
+      //重複元素不能再重複擺上去計算
       if (i > start && candidates[i] === candidates[i - 1]) continue;
       temp.push(candidates[i]);
       backtrack(i + 1, temp);
