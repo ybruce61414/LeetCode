@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/ybruce61414/LeetCode-practice#readme",
   "dependencies": {
-    "prettier": "^2.5.0"
+    "prettier": "^2.6.2"
   }
 }
