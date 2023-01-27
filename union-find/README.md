@@ -2,7 +2,7 @@
 
 A data structure that can keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets.
 ####  How are these represented?
-Using an array which stores the parent od each element.
+Using an array which stores the parent of each element.
 
 <hr style="border:1px solid gray">
 
@@ -27,6 +27,8 @@ Using an array which stores the parent od each element.
           // with path compression
           parent[element] = find(parent[element]);
       }
+      
+      // O(logN): tree height
       return parent[element];
     };
     ```
@@ -35,7 +37,8 @@ Using an array which stores the parent od each element.
     const union = (ele1, ele2) => {
         const root1 = find(ele1);
         const root2 = find(ele2);
-
+        
+        // O(MlogN): M times of find 
         if (root1 !== root2) parent[root1] = root2;
     };
     ```
