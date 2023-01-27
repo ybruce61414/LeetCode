@@ -1,5 +1,5 @@
 # Union-Find (Disjoint Sets)
-***
+
 A data structure that can keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets.
 ####  How are these represented?
 Using an array which stores the parent od each element.
@@ -8,9 +8,9 @@ Using an array which stores the parent od each element.
 1.  Determine the connected components in a graph.
 2.  Grouping.
 
-
+***
 ###  Operations
-*   Make set O(N)
+1.  Make set O(N)
     ```js
     const parent = {};
     
@@ -19,7 +19,7 @@ Using an array which stores the parent od each element.
       if (!parent[ele]) parent[ele] = ele;
     }
     ```
-*   Find O(logN)
+2.  Find O(logN)
     ```js
     const find = element => {
       if (parent[element] !== element) {
@@ -29,7 +29,7 @@ Using an array which stores the parent od each element.
       return parent[element];
     };
     ```
-*   Union O(MlogN)
+3.  Union O(MlogN)
     ```js
     const union = (ele1, ele2) => {
         const root1 = find(ele1);
