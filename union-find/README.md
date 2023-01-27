@@ -1,14 +1,15 @@
-# Union-Find (Disjoint Sets)
+# Union-Find (Disjoint Sets) Note
 
 A data structure that can keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets.
 ####  How are these represented?
 Using an array which stores the parent od each element.
-***
+
+<hr style="border:1px solid gray">
+
 ###  Usage
 1.  Determine the connected components in a graph.
 2.  Grouping.
 
-***
 ###  Operations
 1.  Make set O(N)
     ```js
