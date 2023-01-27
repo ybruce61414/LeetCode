@@ -9,6 +9,8 @@ const buildAdjList = (n, edges) => {
   return adjList;
 };
 
+
+// Undirected graph
 console.log(
   buildAdjList(4, [
     [1, 0],
