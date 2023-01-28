@@ -1,6 +1,7 @@
 # Union-Find (Disjoint Sets) Note
-
-A data structure that can keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets.
+#### What is Union-Find?
+1. A data structure that can keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets.
+2. The basic idea is that it simulates a forest (a group of trees) using an array (-like) data struture. The indexes of the array represent the nodes. The values of the array represent each node's parent.
 ####  How are these represented?
 Using an array which stores the parent of each element.
 
