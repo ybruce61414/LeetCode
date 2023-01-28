@@ -10,7 +10,7 @@ Using an **array** or a **hash table** to store the parent of each element.
 1. It's fast when the trees in the forest have low heights ``O(logN)``.
 2. It's slow (the worst case) when we are getting the skew trees ``O(N)``, where ``N`` is the number of the nodes in that tree.
 3. Using **path compression**: 
-   *    The effect of path compression is that evey node on the path from ``X`` to the root has its parent changed to the root.
+   *    The effect of path compression is that evey node on the path from ``X`` to the ``root`` has its parent changed to the root.
 ***
 
 ###  Usage
@@ -18,16 +18,17 @@ Using an **array** or a **hash table** to store the parent of each element.
 2.  Given a set of nodes and edges, find out which components belong to a group and how many such groups exist.
 
 ###  Operations
-1.  Make set ``O(N)``
+1.  Make set 
     ```js
     const parent = {};
     
     for (let i = 0; i < elements.length; i++) {
+      // O(N)
       const ele = elements[i];
       if (!parent[ele]) parent[ele] = ele;
     }
     ```
-2.  Find ``O(logN)``
+2.  Find 
     ```js
     const find = element => {
       if (parent[element] !== element) {
@@ -39,7 +40,7 @@ Using an **array** or a **hash table** to store the parent of each element.
       return parent[element];
     };
     ```
-3.  Union ``O(MlogN)``
+3.  Union
     ```js
     const union = (ele1, ele2) => {
         const root1 = find(ele1);
