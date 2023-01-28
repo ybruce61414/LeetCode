@@ -1,15 +1,20 @@
 # Union-Find (Disjoint Sets) Note
-#### What is Union-Find?
+####    What is Union-Find?
 1. A data structure that can keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets.
 2. The basic idea is that it simulates a forest (a group of trees) using an array (-like) data struture. The indexes of the array represent the nodes. The values of the array represent each node's parent.
-####  How are these represented?
-Using an array which stores the parent of each element.
+####    How are these represented?
+Using an **array** or a **hash table** which stores the parent of each element.
 
-<hr style="border:1px solid gray">
+####    Characteristics of Find Operation
+1. It's fast when the trees in the forest have low heights ``O(logN)``.
+2. It's slow (the worst case) when we are getting the skew trees ``O(N)``, where ``N`` is the number of the nodes in that tree.
+3. Using **path compression**: 
+   *    The effect of path compression is that evey node on the path from ``X`` to the root has its parent changed to the root.
+***
 
 ###  Usage
 1.  Determine the connected components in a graph.
-2.  Grouping.
+2.  Given a set of nodes and edges, find out which components belong to a group and how many such groups exist.
 
 ###  Operations
 1.  Make set O(N)
