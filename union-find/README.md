@@ -2,8 +2,9 @@
 ####    What is Union-Find?
 1. A data structure that can keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets.
 2. The basic idea is that it simulates a forest (a group of trees) using an array (-like) data struture. The indexes of the array represent the nodes. The values of the array represent each node's parent.
+
 ####    How are these represented?
-Using an **array** or a **hash table** which stores the parent of each element.
+Using an **array** or a **hash table** to store the parent of each element.
 
 ####    Characteristics of Find Operation
 1. It's fast when the trees in the forest have low heights ``O(logN)``.
@@ -17,7 +18,7 @@ Using an **array** or a **hash table** which stores the parent of each element.
 2.  Given a set of nodes and edges, find out which components belong to a group and how many such groups exist.
 
 ###  Operations
-1.  Make set O(N)
+1.  Make set ``O(N)``
     ```js
     const parent = {};
     
@@ -26,7 +27,7 @@ Using an **array** or a **hash table** which stores the parent of each element.
       if (!parent[ele]) parent[ele] = ele;
     }
     ```
-2.  Find O(logN)
+2.  Find ``O(logN)``
     ```js
     const find = element => {
       if (parent[element] !== element) {
@@ -38,7 +39,7 @@ Using an **array** or a **hash table** which stores the parent of each element.
       return parent[element];
     };
     ```
-3.  Union O(MlogN)
+3.  Union ``O(MlogN)``
     ```js
     const union = (ele1, ele2) => {
         const root1 = find(ele1);
