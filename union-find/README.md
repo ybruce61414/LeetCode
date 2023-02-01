@@ -50,3 +50,14 @@ Using an **array** or a **hash table** to store the parent of each element.
         if (root1 !== root2) parent[root1] = root2;
     };
     ```
+***
+##  Questions
+### Classics
+1.  [LeetCode 721. Accounts Merge](https://leetcode.com/problems/accounts-merge/description/) ``medium``
+2.  [LeetCode 684. Redundant Connection](https://leetcode.com/problems/redundant-connection/description/) ``medium``
+3.  [LeetCode 1319. Number of Operations to Make Network Connected](https://leetcode.com/problems/number-of-operations-to-make-network-connected/) ``medium``
+4.  [LeetCode 1971. Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/) ``easy``
+
+
+### Non-intuitive
+1.    [LeetCode 1202. Smallest String With Swaps](https://leetcode.com/problems/smallest-string-with-swaps/) ``medium``: very cool!
