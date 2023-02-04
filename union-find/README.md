@@ -61,6 +61,6 @@ Using an **array** or a **hash table** to store the parent of each element.
 ### Non-intuitive
 1.  [LeetCode 721. Accounts Merge](https://leetcode.com/problems/accounts-merge/description/) ``medium``
 2.  [LeetCode 1202. Smallest String With Swaps](https://leetcode.com/problems/smallest-string-with-swaps/) ``medium``: very cool!
-3.  [LeetCode 1631. Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/) ``medium``
+3.  [LeetCode 1631. Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/) ``medium``: very hard ><
 4.  [LeetCode 778. Swim in Rising Water](https://leetcode.com/problems/swim-in-rising-water/) ``hard``
 5.  [LeetCode 827. Making A Large Island](https://leetcode.com/problems/making-a-large-island/) ``hard``
