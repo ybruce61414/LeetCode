@@ -15,7 +15,7 @@
 - Adjacency List 
 - Adjacency Matrix
 
-####    Traversal Types
+####    Types
 1. DFS: depth first search
 2. BFS: breadth first search
 
@@ -24,6 +24,60 @@
 ###  Concept
 Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (``n=8``):
 ![Alt text](traversals/graph-dfs.png "Optional title")
-1.  Determine the connected components in a graph.
-2.  Given a set of nodes and edges, find out which components belong to a group and how many such groups exist.
+####  DFS
+1.  Recursive way:
+    ```js
+    // ...
+    const dfsRecursive = start => {
+      const path = [];
+      const visited = {};
+      
+      const dfs = node => {
+          if (node === undefined || node === null) return;
+      
+          visited[node] = true;
+          path.push(node);
+      
+          for (let neighbor of adjList[node]) {
+            if (!visited[neighbor]) dfs(neighbor);
+          }
+      };
+      
+      dfs(start);
+      return path;
+    };
+    
+    // start traversal
+    dfsRecursive(3);
+    ```
+2.  Iterative way:
+    ```js
+    // ...
+    const dfsIterative = start => {
+      const stack = [];
+      const visited = {};
+      const path = [];
+    
+      // init
+      stack.push(start);
+      visited[start] = true;
+    
+      while (stack.length > 0) {
+      const pop = stack.pop();
+      path.push(pop);
+    
+        for (let neighbor of adjList[pop]) {
+          if (!visited[neighbor]) {
+            visited[neighbor] = true;
+            stack.push(neighbor);
+          }
+        }
+      }
+    
+      return path;
+    };
+    
+    // start traversal
+    dfsIterative(3);
+    ```
 
