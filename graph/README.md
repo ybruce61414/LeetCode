@@ -23,8 +23,8 @@
 
 ####    Comparison
 - DFS has **lower memory** because it's not required to store all of the child pointers at each level.
-- Solutions at low depth: BFS
-- Solutions at maximum depth: DFS
+- Solutions at low depth: *BFS*
+- Solutions at maximum depth: *DFS*
 
 | Applications                                         | DFS | BFS |
 |:-----------------------------------------------------|:---:|:---:|
@@ -33,14 +33,16 @@
 | Minimal use of memory space                          |  ✅  |     |
 ***
 
-###  Concept
+###  Basic Concept
   Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (``n=8``, ``adjList``):
   ![Alt text](traversals/graph-dfs.png "Optional title")
-####  DFS ``O(V + E)``
+####  DFS 
 1.  Recursively:
     ```js
     // ...
+    
     const dfsRecursive = start => {
+      // O(V + E)
       const path = [];
       const visited = {};
       
@@ -67,7 +69,9 @@
 2.  Iteratively:
     ```js
     // ...
+    
     const dfsIterative = start => {
+      // O(V + E)
       const stack = [];
       const visited = {};
       const path = [];
@@ -95,10 +99,13 @@
     //  3, 6, 1, 0, 7, 4, 5, 2
     dfsIterative(3);
     ```
-####  BFS ``O(V + E)``
+####  BFS 
 1.  Iteratively:
     ```js
+    // ...
+    
     const bfsIterative = start => {
+      // ``O(V + E)``
       const queue = [];
       const visited = {};
       const path = [];
