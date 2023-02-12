@@ -61,5 +61,5 @@ const dfsIterative = start => {
   return path;
 };
 
-console.log('--dfsRecursive:', dfsRecursive(3))
-console.log('--dfsIterative:', dfsIterative(3))
+console.log('--dfsRecursive:', dfsRecursive(3));
+console.log('--dfsIterative:', dfsIterative(3));
