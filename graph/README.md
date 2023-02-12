@@ -33,7 +33,7 @@
 | Minimal use of memory space                          |  ✅  |     |
 ***
 
-###  Basic Concept
+###  Basic Concepts
   Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (``n=8``, ``adjList``):
   ![Alt text](traversals/graph-dfs.png "Optional title")
 ####  DFS 
