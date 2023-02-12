@@ -9,7 +9,7 @@
     3. A **cycle** is a path where first and last vertices are the same.
     4. **DAG**: directed acyclic graph (directed graph with no cycles).
     5. **Bipartite graph**: A graph whose vertices can be divided into two sets such that all edges connect a vertex in one set with a vertex in the other set
-       (兩群之間有邊，單群之內無邊). ex: coloring problems
+       (兩群之間有邊，單群之內無邊). ex: [coloring problems](https://leetcode.com/problems/possible-bipartition/solutions/213114/The-classical-graph-problem-%222-Coloring-Problem%22-solved-using-DFS/)
 
 ####    How are these represented?
 - Adjacency List 
@@ -19,13 +19,23 @@
 1. DFS: depth first search
 2. BFS: breadth first search
 
+####    Comparison
+- DFS has lower **memory** because it's not required to store all of the child pointers at each level.
+- Solutions at low depth: BFS
+- Solutions at maximum depth: DFS
+
+| Applications                                         | DFS | BFS |
+|:-----------------------------------------------------|:---:|:---:|
+| Spanning forest, connected components, paths, cycles |  ✅  |     |
+| Shortest paths                                       |     |  ✅  |
+| Minimal use of memory space                          |  ✅  |     |
 ***
 
 ###  Concept
-Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (``n=8``):
-![Alt text](traversals/graph-dfs.png "Optional title")
+  Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (``n=8``, ``adjList``):
+  ![Alt text](traversals/graph-dfs.png "Optional title")
 ####  DFS
-1.  Recursive way:
+1.  Recursively:
     ```js
     // ...
     const dfsRecursive = start => {
@@ -47,10 +57,10 @@ Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (
       return path;
     };
     
-    // start traversal
+    // start traversal from node 3
     dfsRecursive(3);
     ```
-2.  Iterative way:
+2.  Iteratively:
     ```js
     // ...
     const dfsIterative = start => {
@@ -77,7 +87,7 @@ Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (
       return path;
     };
     
-    // start traversal
+    // start traversal from node 3
     dfsIterative(3);
     ```
 
