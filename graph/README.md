@@ -1,6 +1,6 @@
 # Graph Traversal (or Search) Note
 ####    What is Graph?
-- Graph is a non-linear data structure consisting of vertices and edges.
+- Consisting of vertices and edges.
 - Vertices: the fundamental units of the graph. Sometimes, vertices are also known as **vertex** or **node**.
   - *format on leetCode*: ``[node1, node2, node3]``
 - Edges: indicate a symmetric relationship between their ends(vertices), **directed** or **undirected**. 
