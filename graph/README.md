@@ -10,7 +10,7 @@
     2. A **path** is a sequence of adjacent vertices with no repeated ones.
     3. A **cycle** is a path where first and last vertices are the same.
     4. **DAG**: directed acyclic graph (directed graph with no cycles).
-    5. **Bipartite graph**: A graph whose vertices can be divided into **two** sets such that all edges connect a vertex in one set with a vertex in the other set
+    5. >**Bipartite graph**: A graph whose vertices can be divided into **two** sets such that all edges connect a vertex in one set with a vertex in the other set
        (兩群點之間必有相鄰，同群點之間必不相鄰). ex: [coloring problems](https://leetcode.com/problems/possible-bipartition/solutions/213114/The-classical-graph-problem-%222-Coloring-Problem%22-solved-using-DFS/)
 
 ####    How are these represented?
@@ -133,4 +133,12 @@
     // 3 6 2 1 0 5 4 7
     bfsIterative(3);
     ```
-   
+
+##  Questions
+### Types
+1. Bipartite Graph
+   1. [LeetCode 785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) ``medium``
+   2. [LeetCode 886. Possible Bipartition](https://leetcode.com/problems/possible-bipartition/) ``medium``
+   - Strategy:
+     - > dfs: 每次踩到的點，記下與此點相鄰的label都要與之相反（neighbor label） -> loop neighbors -> 如果沒有採過此點，則遞迴下去，如果已經採過此點：判斷label與neighborlabel有無相同，相同則代表不是bigraph。
+
