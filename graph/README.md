@@ -147,7 +147,7 @@
     // dfs recursive-way
    
     var isBipartite = function(graph) {
-        // 記錄每個點的狀態：0:未踩,1：1號群, 2：2號群
+        // 記錄每個點的狀態：0:未踩,1：1號群, 2：2號群，1, 2群不相鄰
         const visited = {};
 
         // init 
