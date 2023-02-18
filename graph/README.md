@@ -1,4 +1,5 @@
 # Graph Traversal (or Search) Note
+> 在此討論的graph，我定義為廣義的graph problem，因為adjacent-list需要自己計算，還有edge會有**權重**和**方向性**的時候; 相比於2d-array的題目就不用考慮adjacent list（只有上左右跟界外），權重都為1，在此我自己區分為general-dfs/ bfs.
 ####    What is Graph?
 - Consisting of vertices and edges.
 - Vertices: the fundamental units of the graph. Sometimes, vertices are also known as **vertex** or **node**.
@@ -10,7 +11,7 @@
     2. A **path** is a sequence of adjacent vertices with no repeated ones.
     3. A **cycle** is a path where first and last vertices are the same.
     4. **DAG**: directed acyclic graph (directed graph with no cycles).
-    5. >**Bipartite graph**: A graph whose vertices can be divided into **two** sets such that all edges connect a vertex in one set with a vertex in the other set
+    5. **Bipartite graph**: A graph whose vertices can be divided into **two** sets such that all edges connect a vertex in one set with a vertex in the other set
        (兩群點之間必有相鄰，同群點之間必不相鄰). ex: [coloring problems](https://leetcode.com/problems/possible-bipartition/solutions/213114/The-classical-graph-problem-%222-Coloring-Problem%22-solved-using-DFS/)
 
 ####    How are these represented?
