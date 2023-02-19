@@ -185,7 +185,7 @@
     ```
 2. Weighted Graph
     1. [LeetCode 399. Evaluate Division](https://leetcode.com/problems/evaluate-division/) ``medium``
-    2. [LeetCode 787. Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/description/) ``medium`` it's **hard**
+    2. [LeetCode 787. Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/description/) ``medium`` it looks basic but **hard**
     - Strategy:
     - > dfs/bfs: adjList 要紀錄weight：
       > - object form：{ node: 1, weight: 3 }, 
@@ -216,8 +216,10 @@
       // init
       // queue裡存放的形式：[node, 該點與src的距離]
       const queue = [[src, 0]];
+   
       // distance 紀錄src到每個點的最小距離
       distance[src] = 0;
+   
       // stop記錄擴張的次數
       let stop = 0;
     
