@@ -6,7 +6,7 @@
 - > dfs/bfs: adjList 要紀錄weight：
   > - object form：{ node: 1, weight: 3 },
   > - array form: [node, weight]
-- ex 787:
+- ex #787:
 ```js
 // shortesst path: bfs（因為這裡有指定走k次的限制，所以可以用bfs）
 // 1. 要注意stop的計算次數，所以每次while進來的只能執行那一層level的次數，就要計算一次stop
