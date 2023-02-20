@@ -137,7 +137,7 @@
 
 ##  Questions
 ### Types
-1. [**Bipartite Graph**](./bipartite-graph/README.md)
+1. [**Bipartite Graph**](./bipartite-graph)
    1. [LeetCode 785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) ``medium``
    2. [LeetCode 886. Possible Bipartition](https://leetcode.com/problems/possible-bipartition/) ``medium``
    
