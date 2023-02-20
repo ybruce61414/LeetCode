@@ -184,3 +184,5 @@
     };
     ```
 2. [Weighted Graph](./weighted-graph/README.md)
+   1. [LeetCode 399. Evaluate Division](https://leetcode.com/problems/evaluate-division/) ``medium``
+   2. [LeetCode 787. Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/description/) ``medium`` it looks basic but **hard**
