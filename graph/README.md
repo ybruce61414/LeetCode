@@ -141,6 +141,6 @@
    1. [LeetCode 785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/) ``medium``
    2. [LeetCode 886. Possible Bipartition](https://leetcode.com/problems/possible-bipartition/) ``medium``
    
-2. [**Weighted Graph**](./weighted-graph/README.md)
+2. [**Weighted Graph**](./weighted-graph)
    1. [LeetCode 399. Evaluate Division](https://leetcode.com/problems/evaluate-division/) ``medium``
    2. [LeetCode 787. Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/description/) ``medium`` it looks basic but **hard**
