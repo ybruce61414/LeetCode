@@ -47,6 +47,8 @@
       const path = [];
       const visited = {};
       
+      // visited都是在node進去dfs裡才會紀錄
+      // 進stack則是，node進去，visited也要同步紀錄
       const dfs = node => {
           if (node === undefined || node === null) return;
       
@@ -106,12 +108,13 @@
     // ...
     
     const bfsIterative = start => {
-      // ``O(V + E)``
+      // O(V + E)
       const queue = [];
       const visited = {};
       const path = [];
     
       // init
+      // 進queue時，visited也要同步更新紀錄
       queue.push(start);
       visited[start] = true;
     
@@ -121,6 +124,7 @@
     
         for (let neighbor of adjList[shift]) {
           if (!visited[neighbor]) {
+            // 進queue, visited更新，是一組的動作
             visited[neighbor] = true;
             queue.push(neighbor);
           }
