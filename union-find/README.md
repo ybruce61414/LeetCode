@@ -53,9 +53,10 @@ Using an **array** or a **hash table** to store the parent of each element.
 ***
 ##  Questions
 ### Classics
-1.  [LeetCode 684. Redundant Connection](https://leetcode.com/problems/redundant-connection/description/) ``medium``
-2.  [LeetCode 1319. Number of Operations to Make Network Connected](https://leetcode.com/problems/number-of-operations-to-make-network-connected/) ``medium``
-3.  [LeetCode 1971. Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/) ``easy``
+1.  [LeetCode 323. Number of Connected Components in an Undirected Graph](https://www.cnblogs.com/cnoodle/p/14197652.html) ``medium`` very basic one (or dfs)
+2.  [LeetCode 684. Redundant Connection](https://leetcode.com/problems/redundant-connection/description/) ``medium``
+3.  [LeetCode 1319. Number of Operations to Make Network Connected](https://leetcode.com/problems/number-of-operations-to-make-network-connected/) ``medium``
+4.  [LeetCode 1971. Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/) ``easy``
 
 
 ### Non-intuitive
