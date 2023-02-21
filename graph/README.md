@@ -7,7 +7,7 @@
 - Edges: indicate a symmetric relationship between their ends(vertices), **directed** or **undirected**. 
   - *format on leetCode*: ``[[src1, dest1], [src2, dest2]]``
 - Important traits:
-    1. A graph with no **cycles** is called a **tree**. A tree is an acyclic connected graph.
+    1. A graph with no **cycles** is called a **tree**. A tree is an **acyclic**(非循環) connected graph.
     2. A **path** is a sequence of adjacent vertices with no repeated ones.
     3. A **cycle** is a path where first and last vertices are the same.
     4. **DAG**: directed acyclic graph (directed graph with no cycles).
