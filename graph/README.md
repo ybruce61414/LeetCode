@@ -37,10 +37,10 @@
 ###  Basic Concepts
   Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (``n=8``, ``adjList``):
   ![Alt text](traversals/graph-dfs.png "Optional title")
+
 ####  DFS 
 <details>
-    <summary>1.  Recursively:</summary>
-
+    <summary>1.  Recursive</summary>
 
 ```js
 // ...
@@ -74,75 +74,82 @@ dfsRecursive(3);
 ```
 </details>
 
-2.  Iteratively:
-    ```js
-    // ...
-    
-    const dfsIterative = start => {
-      // O(V + E)
-      const stack = [];
-      const visited = {};
-      const path = [];
-    
-      // init
-      stack.push(start);
-      visited[start] = true;
-    
-      while (stack.length > 0) {
-      const pop = stack.pop();
-      path.push(pop);
-    
-        for (let neighbor of adjList[pop]) {
-          if (!visited[neighbor]) {
-            visited[neighbor] = true;
-            stack.push(neighbor);
-          }
-        }
+<details>
+    <summary>2.  Iterative</summary>
+
+```js
+// ...
+
+const dfsIterative = start => {
+  // O(V + E)
+  const stack = [];
+  const visited = {};
+  const path = [];
+
+  // init
+  stack.push(start);
+  visited[start] = true;
+
+  while (stack.length > 0) {
+  const pop = stack.pop();
+  path.push(pop);
+
+    for (let neighbor of adjList[pop]) {
+      if (!visited[neighbor]) {
+        visited[neighbor] = true;
+        stack.push(neighbor);
       }
-    
-      return path;
-    };
-    
-    // start traversal from node 3
-    //  3, 6, 1, 0, 7, 4, 5, 2
-    dfsIterative(3);
-    ```
+    }
+  }
+
+  return path;
+};
+
+// start traversal from node 3
+//  3, 6, 1, 0, 7, 4, 5, 2
+dfsIterative(3);
+```
+</details>
+
 ####  BFS 
-1.  Iteratively:
-    ```js
-    // ...
-    
-    const bfsIterative = start => {
-      // O(V + E)
-      const queue = [];
-      const visited = {};
-      const path = [];
-    
-      // init
-      // 進queue時，visited也要同步更新紀錄
-      queue.push(start);
-      visited[start] = true;
-    
-      while (queue.length > 0) {
-        const shift = queue.shift();
-        path.push(shift);
-    
-        for (let neighbor of adjList[shift]) {
-          if (!visited[neighbor]) {
-            // 進queue, visited更新，是一組的動作
-            visited[neighbor] = true;
-            queue.push(neighbor);
-          }
-        }
+<details>
+    <summary>1.  Iterative</summary>
+
+```js
+// ...
+
+const bfsIterative = start => {
+  // O(V + E)
+  const queue = [];
+  const visited = {};
+  const path = [];
+
+  // init
+  // 進queue時，visited也要同步更新紀錄
+  queue.push(start);
+  visited[start] = true;
+
+  while (queue.length > 0) {
+    const shift = queue.shift();
+    path.push(shift);
+
+    for (let neighbor of adjList[shift]) {
+      if (!visited[neighbor]) {
+        // 進queue, visited更新，是一組的動作
+        visited[neighbor] = true;
+        queue.push(neighbor);
       }
-    
-    return path;
-    };
-    
-    // start traversal from node 3
-    // 3 6 2 1 0 5 4 7
-    bfsIterative(3);
-    ```
+    }
+  }
+
+return path;
+};
+
+// start traversal from node 3
+// 3 6 2 1 0 5 4 7
+bfsIterative(3);
+```
+</details>
 
 ##  Questions
 ### Types
