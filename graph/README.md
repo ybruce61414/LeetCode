@@ -40,7 +40,7 @@
 
 ####  DFS 
 <details>
-    <summary>1.  Recursive</summary>
+    <summary>1.  Recursively</summary>
 
 ```js
 // ...
@@ -75,7 +75,7 @@ dfsRecursive(3);
 </details>
 
 <details>
-    <summary>2.  Iterative</summary>
+    <summary>2.  Iteratively</summary>
 
 ```js
 // ...
@@ -113,7 +113,7 @@ dfsIterative(3);
 
 ####  BFS 
 <details>
-    <summary>1.  Iterative</summary>
+    <summary>1.  Iteratively</summary>
 
 ```js
 // ...
