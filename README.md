@@ -1,5 +1,5 @@
 # LeetCode Learning
-###    Categories
+###    Table of Contents
 
 
 1.  [Union-Find](union-find/README.md)

@@ -153,10 +153,16 @@ bfsIterative(3);
 
 ##  Questions
 ### Types
-1. [**Bipartite Graph**](./bipartite-graph)
+1. **Basics**
+   1. [LeetCode 133. Clone Graph](https://leetcode.com/problems/clone-graph/) ``medium``
+   2. LeetCode 323. Number of Connected Components in an Undirected Graph ``medium``
+   3. LeetCode 261. Graph Valid Tree ``medium``
+     
+   
+2. [**Bipartite Graph**](./bipartite-graph)
    1. LeetCode 785. Is Graph Bipartite? ``medium``
    2. LeetCode 886. Possible Bipartition ``medium``
    
-2. [**Weighted Graph**](./weighted-graph)
+3. [**Weighted Graph**](./weighted-graph)
    1. LeetCode 399. Evaluate Division ``medium``
-   2. LeetCode 787. Cheapest Flights Within K Stops ``medium`` it looks basic but **hard**
+   2. LeetCode 787. Cheapest Flights Within K Stops ``medium``
