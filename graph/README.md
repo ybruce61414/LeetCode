@@ -38,37 +38,42 @@
   Given ``n`` nodes labeled from ``0`` to ``n-1`` and a list of undirected edges (``n=8``, ``adjList``):
   ![Alt text](traversals/graph-dfs.png "Optional title")
 ####  DFS 
-1.  Recursively:
-    ```js
-    // ...
-    
-    const dfsRecursive = start => {
-      // O(V + E)
-      const path = [];
-      const visited = {};
-      
-      // visited都是在node進去dfs裡才會紀錄
-      // 進stack則是，node進去，visited也要同步紀錄
-      const dfs = node => {
-          if (node === undefined || node === null) return;
-      
-          visited[node] = true;
-          path.push(node);
-      
-          for (let neighbor of adjList[node]) {
-            if (!visited[neighbor]) dfs(neighbor);
-          }
-      };
-      
-      dfs(start);
-      return path;
-    };
-    
-    // start traversal from node 3
-    // 3, 6, 2, 0, 1, 5, 4, 7
+<details>
+    <summary>1.  Recursively:</summary>
 
-    dfsRecursive(3);
-    ```
+
+```js
+// ...
+
+const dfsRecursive = start => {
+  // O(V + E)
+  const path = [];
+  const visited = {};
+  
+  // visited都是在node進去dfs裡才會紀錄
+  // 進stack則是，node進去，visited也要同步紀錄
+  const dfs = node => {
+      if (node === undefined || node === null) return;
+  
+      visited[node] = true;
+      path.push(node);
+  
+      for (let neighbor of adjList[node]) {
+        if (!visited[neighbor]) dfs(neighbor);
+      }
+  };
+  
+  dfs(start);
+  return path;
+};
+
+// start traversal from node 3
+// 3, 6, 2, 0, 1, 5, 4, 7
+
+dfsRecursive(3);
+```
+</details>
+
 2.  Iteratively:
     ```js
     // ...
