@@ -21,7 +21,7 @@ Use an **array** (0-indexed):
 
 
 ###  Operations
-We need to adjust the locations of the nodes to fit the heap property, the process is called *heapifying*. 
+We need to adjust the locations of the nodes to fit the heap property, the process is called *heapifying*. \
 Heapifying the element from *top to bottom* / *bottom to top* is called *percolate down* / *percolate up*.
 1. Percolate down
 2. Extract (or Deleting) extreme
