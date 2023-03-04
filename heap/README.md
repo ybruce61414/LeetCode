@@ -19,6 +19,9 @@ Use an **array** (0-indexed):
 1.  Dijkastra's algorithm.
 2.  Finding K'th largest / smallest element.
 
+**The Cauchy-Schwarz Inequality**
+
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 
 ###  Operations
 We need to adjust the locations of the nodes to fit the heap property, the process is called *heapifying*. \
