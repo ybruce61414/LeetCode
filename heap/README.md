@@ -15,13 +15,17 @@ Use an **array** (0-indexed):
 - left child index of *i*: *i* * 2 + 1
 - right child index of *i*: *i* * 2 + 2
 
+####    Tricky part: heapifying the array ``O(n)``
+> - 直覺會覺得是``O(nlog(n))``，每個點進來排``log(n)`` ，共n個點，錯的。
+> - 想法：用percolate down，所有的leaf node就不用考慮，因為他下面沒有層了（直接省掉對node最多的level計算次數），然後一路往上層走，到最頂端root node，只有他需要做到``log(n)``，所以時間複雜度其實是比``O(nlog(n))``小的，答案是``O(n)``。
+> - Proof: $$\left( \sum_{i=0}^h 2^i(h - i) \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 ###  Usage
 1.  Dijkastra's algorithm.
 2.  Finding K'th largest / smallest element.
 
 **The Cauchy-Schwarz Inequality**
 
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+$$\left( \sum_{i=0}^h 2^i(h - i) \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 
 ###  Operations
 We need to adjust the locations of the nodes to fit the heap property, the process is called *heapifying*. \
