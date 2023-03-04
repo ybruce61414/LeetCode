@@ -18,7 +18,7 @@ Use an **array** (0-indexed):
 ####    Tricky part: heapifying the array ``O(n)``
 > - 直覺會覺得是``O(nlog(n))``，每個點進來排``log(n)`` ，共n個點，錯的。
 > - 想法：用percolate down，所有的leaf node就不用考慮，因為他下面沒有層了（直接省掉對node最多的level計算次數），然後一路往上層走，到最頂端root node，只有他需要做到``log(n)``，所以時間複雜度其實是比``O(nlog(n))``小的，答案是``O(n)``。
-> - Proof: $$S = \sum_{i=0}^h 2^i(h - i)$$ $$S = h + 2(h - 1) + 4(h-2) + 8(h - 2)+...+2^h$$
+> - Proof: $$S = \sum_{i=0}^h 2^i(h - i)$$ $$S = h + 2(h - 1) + 4(h-2) + 8(h - 2)+...+2^h$$ $$2S-S = (2^(h+1) - 1)-(h-1)$$
 ###  Usage
 1.  Dijkastra's algorithm.
 2.  Finding K'th largest / smallest element.
