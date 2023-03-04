@@ -1,7 +1,7 @@
-class Heap {
-  constructor(type) {
+// non optimal version
+class MaxHeap {
+  constructor() {
     this.values = [];
-    this.type = type;
   }
 
   getParent(idx) { return Math.floor((idx - 1) / 2) }
@@ -28,16 +28,16 @@ class Heap {
   extract() {
     if (this.values.length === 0) return;
     this.swap(0, this.values.length - 1);
-    let extreme = this.values.pop();
+    let max = this.values.pop();
     this._trickleDown(0);
-    return extreme;
+    return max;
   }
 
   heapify(arr) {
     if (!Array.isArray(arr)) return -1;
 
     const lastParentIdx = this.getParent(arr.length - 1);
-    this.values = [...arr];
+    this.values = arr;
 
     for (let i = lastParentIdx; i >= 0; i--) {
       this._trickleDown(i);
@@ -45,25 +45,13 @@ class Heap {
 
     return this.values;
   }
-
   _bubbleUp() {
     let curIdx = this.values.length - 1;
     let parentIdx = this.getParent(curIdx);
 
-
-    const getCondition = (idx, parentIdx) => {
-      switch (this.type) {
-        case 'min':
-          return this.values[idx] < this.values[parentIdx];
-        case 'max':
-          return this.values[idx] > this.values[parentIdx];
-        default:
-          return false;
-      }
-    }
     // while we haven't reached the root node and
     // the current element is greater than its parent node
-    while (getCondition(curIdx, parentIdx) && curIdx > 0) {
+    while (this.values[curIdx] > this.values[parentIdx] && curIdx > 0) {
       this.swap(curIdx, parentIdx);
       // move up the binary heap
       curIdx = parentIdx;
@@ -76,31 +64,19 @@ class Heap {
     let rightChildIdx = this.getRightChild(idx);
     let len = this.values.length;
 
-    // not leaf node
     let swapIdx = idx;
 
-    const getCondition = (targetIdx, swapIdx) => {
-      switch (this.type) {
-        case 'min':
-          return this.values[targetIdx] < this.values[swapIdx];
-        case 'max':
-          return this.values[targetIdx] > this.values[swapIdx];
-        default:
-          return false;
-      }
-    };
-
-    //left > cur
+    //  check whether leftChildIdx exists in bound & left > cur
     if (
       leftChildIdx < len &&
-      getCondition(leftChildIdx, swapIdx)
+      this.values[leftChildIdx] > this.values[swapIdx]
     ) {
       swapIdx = leftChildIdx;
     }
 
     if (
       rightChildIdx < len &&
-      getCondition(rightChildIdx, swapIdx)
+      this.values[rightChildIdx] > this.values[swapIdx]
     ) {
       swapIdx = rightChildIdx;
     }
@@ -114,29 +90,14 @@ class Heap {
   }
 }
 
-
-
-const mockMinHeap = new Heap('min');
-const mockMaxHeap = new Heap('max');
-
+const mockHeap = new MaxHeap();
 const arr = [4, 1, 5, 6, 3, 2, 7];
 
-for (let item of arr) {
-  mockMinHeap.insert(item);
-  mockMaxHeap.insert(item);
-}
+for (let item of arr) mockHeap.insert(item);
 
-console.log('--min insert:', mockMinHeap);
-// 1 3 2 6 4 5 7
-
-console.log('--max insert:', mockMaxHeap);
+console.log('--max insert:', mockHeap);
 // 7 5 6 1 3 2 4
 
-mockMinHeap.heapify(arr);
-mockMaxHeap.heapify(arr);
-
-console.log('--min heapify:', mockMinHeap);
-// 1 3 2 6 4 5 7
-
-console.log('--max heapify:', mockMaxHeap);
+mockHeap.heapify(arr);
+console.log('--max heapify:', mockHeap);
 // 7 6 5 1 3 2 4
