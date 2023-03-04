@@ -1,4 +1,4 @@
-# Binary Heap (Priority Queue)
+# Binary Heap (Priority Queue) Note
 ####    What is a heap?
 A heap is a **binary tree** with two properties:
 1. **Order**: The value of a node must be >= (or <=) than the values of its children.
