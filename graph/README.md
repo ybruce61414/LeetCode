@@ -1,5 +1,5 @@
 # Graph Note
-> 在此討論的graph，我定義為廣義的graph problem，因為adjacent-list需要自己計算，還有edge會有**權重**和**方向性**的時候; 相比於2d-array的題目就不用考慮adjacent list（只有上左右跟界外），權重都為1，在此我自己區分為general-dfs/ bfs.
+> 在此討論的graph，我定義為廣義的graph problem，因為adjacent-list需要自己計算，還有edge會有**權重**和**方向性**的時候; 相比於2d-array的題目就不用考慮adjacent list（只有上左右跟界外），權重都為1，在此我自己區分為special-dfs/ bfs.
 ####    What is Graph?
 - Consisting of vertices and edges.
 - Vertices: the fundamental units of the graph. Sometimes, vertices are also known as **vertex** or **node**.

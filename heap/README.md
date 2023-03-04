@@ -1,0 +1,16 @@
+# Binary Heap (Priority Queue)
+####    What is a heap?
+A heap is a **binary tree** with two properties:
+1. **Order**: The value of a node must be >= (or <=) than the values of its children.
+2. **Shape**: Must be a *complete binary tree* (every level except the last, is completely filled, and all nodes in the last level are as far left as possible).
+
+####    Why heap?
+It's the most efficient way to implement a **priority queue**.
+
+####    How are these represented?
+Use an **array** (0-indexed):
+> - 用sorted array是最簡單直接的方式來達到priority queue，但insertion是*O(n)*，每個element進來就排序;
+> - 用array ＋ heap特性實作priority queue (array 變成partially sorted)，insertion是*O(log(n))*，每個element進來最多是比較樹高次數。
+- parent index of *i*: floor((*i* - 1) / 2)
+- left child index of *i*: *i* * 2 + 1
+- right child index of *i*: *i* * 2 + 2
