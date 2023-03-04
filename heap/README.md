@@ -14,3 +14,17 @@ Use an **array** (0-indexed):
 - parent index of *i*: floor((*i* - 1) / 2)
 - left child index of *i*: *i* * 2 + 1
 - right child index of *i*: *i* * 2 + 2
+
+###  Usage
+1.  Dijkastra's algorithm.
+2.  Finding K'th largest / smallest element.
+
+
+###  Operations
+We need to adjust the locations of the nodes to fit the heap property, the process is called *heapifying*. 
+Heapifying the element from *top to bottom* / *bottom to top* is called *percolate down* / *percolate up*.
+1. Percolate down
+2. Extract (or Deleting) extreme
+3. Percolate up
+4. Insert
+5. Heapify
