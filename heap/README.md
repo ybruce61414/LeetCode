@@ -1,6 +1,6 @@
 # Binary Heap (Priority Queue) Note
 ####    What is a heap?
-A heap is a **binary tree** with two properties:
+A heap is a **binary tree** with two properties in terms of:
 1. **Order**: The value of a node must be >= (or <=) than the values of its children.
 2. **Shape**: Must be a *complete binary tree* (every level except the last, is completely filled, and all nodes in the last level are as far left as possible).
 
