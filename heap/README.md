@@ -72,6 +72,7 @@ class MaxHeap {
 // ...in class
 
 // this method will put the idx to the correct posotion down to the leaf
+
 _trickleDown(idx) {
   // O(logN): tree height down to the leaf, worst case
   let leftChildIdx = this.getLeftChild(idx);
@@ -133,6 +134,7 @@ extract() {
 // ...in class
 
 // this method will put the idx to the correct posotion up to the root
+
 _bubbleUp() {
   // O(logN): tree height up to the root, worst case
   let curIdx = this.values.length - 1;
