@@ -72,9 +72,9 @@ class MaxHeap {
 // ...in class
 
 // this method will put the idx to the correct posotion down to the leaf
+// O(logN): tree height down to the leaf, worst case
 
 _trickleDown(idx) {
-  // O(logN): tree height down to the leaf, worst case
   let leftChildIdx = this.getLeftChild(idx);
   let rightChildIdx = this.getRightChild(idx);
   let len = this.values.length;
@@ -91,7 +91,7 @@ _trickleDown(idx) {
   }
 
   //  check whether rightChildIdx exists in bound & 
-  //  (right > cur or right > left)
+  //  compare to left or cur
   if (
     rightChildIdx < len &&
     this.values[rightChildIdx] > this.values[swapIdx]
@@ -115,8 +115,9 @@ _trickleDown(idx) {
 ```js
 // ...in class
 
+// O(logN): tree height
+
 extract() {
-  // O(logN): tree height
   if (this.values.length === 0) return;
   
   this.swap(0, this.values.length - 1);
@@ -134,9 +135,9 @@ extract() {
 // ...in class
 
 // this method will put the idx to the correct posotion up to the root
+// O(logN): tree height up to the root, worst case
 
 _bubbleUp() {
-  // O(logN): tree height up to the root, worst case
   let curIdx = this.values.length - 1;
   let parentIdx = this.getParent(curIdx);
 
@@ -159,8 +160,9 @@ _bubbleUp() {
 ```js
 // ...in class
 
+// O(logN): tree height up to the root
+
 insert(ele) {
-  // O(logN): tree height up to the root
   this.values.push(ele);
   this._bubbleUp();
 }
@@ -173,8 +175,9 @@ insert(ele) {
 ```js
 // ...in class
 
+// O(N): amazing
+
 heapify(arr) {
-  // O(N): amazing
   if (!Array.isArray(arr)) return -1;
 
   const lastParentIdx = this.getParent(arr.length - 1);
