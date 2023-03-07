@@ -71,12 +71,13 @@ class MaxHeap {
 ```js
 // ...in class
 
+// this method will put the idx to the correct posotion down to the leaf
 _trickleDown(idx) {
   let leftChildIdx = this.getLeftChild(idx);
   let rightChildIdx = this.getRightChild(idx);
   let len = this.values.length;
 
-  // our purpose is to determine the max value of i to swapIdx
+  // our purpose is to assign the max value's index to swapIdx
   let swapIdx = idx;
 
   //  check whether leftChildIdx exists in bound & left > cur
@@ -129,12 +130,14 @@ extract() {
 ```js
 // ...in class
 
+// this method will put the idx to the correct posotion up to the root
 _bubbleUp() {
   let curIdx = this.values.length - 1;
   let parentIdx = this.getParent(curIdx);
 
-  // while we haven't reached the root node and
-  // the current element is greater than its parent node and not a root 
+  // while we haven't reached the root node
+  // we keep swap the cur and its' parent when
+  // the cur is greater than its parent node
   while (this.values[curIdx] > this.values[parentIdx] && curIdx > 0) {
     this.swap(curIdx, parentIdx);
     // move up the binary heap
