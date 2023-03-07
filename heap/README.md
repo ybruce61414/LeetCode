@@ -73,6 +73,7 @@ class MaxHeap {
 
 // this method will put the idx to the correct posotion down to the leaf
 _trickleDown(idx) {
+  // O(logN): tree height down to the leaf, worst case
   let leftChildIdx = this.getLeftChild(idx);
   let rightChildIdx = this.getRightChild(idx);
   let len = this.values.length;
@@ -114,6 +115,7 @@ _trickleDown(idx) {
 // ...in class
 
 extract() {
+  // O(logN): tree height
   if (this.values.length === 0) return;
   
   this.swap(0, this.values.length - 1);
@@ -132,6 +134,7 @@ extract() {
 
 // this method will put the idx to the correct posotion up to the root
 _bubbleUp() {
+  // O(logN): tree height up to the root, worst case
   let curIdx = this.values.length - 1;
   let parentIdx = this.getParent(curIdx);
 
@@ -155,6 +158,7 @@ _bubbleUp() {
 // ...in class
 
 insert(ele) {
+  // O(logN): tree height up to the root
   this.values.push(ele);
   this._bubbleUp();
 }
@@ -168,6 +172,7 @@ insert(ele) {
 // ...in class
 
 heapify(arr) {
+  // O(N): amazing
   if (!Array.isArray(arr)) return -1;
 
   const lastParentIdx = this.getParent(arr.length - 1);
