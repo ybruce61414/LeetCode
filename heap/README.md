@@ -227,7 +227,7 @@ var findKthLargest = function(nums, k) {
 ```js
 /*
   priority queue(min heap):  O(nlogn)
-  min heap裡存的是正在開會的meetimg room，比較基準為meeting end time
+  想法：利用min heap存下正在開會的meeting room，heap比較基準為end time(peek 就是最結束數的會議)
   
   steps:
     1. 先從小到大排序start time: [[0, 30], [5, 10], [15, 20]]
