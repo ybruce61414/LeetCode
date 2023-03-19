@@ -197,6 +197,7 @@ heapify(arr) {
 ### Classics
 1.  [LeetCode 215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) ``medium`` 
 2.  [LeetCode 347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/description/) ``medium`` (3 methods)
+3.  [LeetCode 253. Meeting Rooms II](https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii)``medium``: interesting
 - Strategy of K'th largest problem:
 > 1. Heap (nlogk): 求前k大就用min heap(因為值越大就會沉在heap的底部)，保證min heap的size不超過k個，超過就踢除最小值(extract):要先讓element進去排序，超過長度才踢掉計算完後的最小值。可以想像校排成績前100這類的問題: 台大只錄取前100名(k=100)，heap size=100，第101個進來後重新排序，算出最小值再把他踢除。
 > 2. quick select (best: O(n), worst: O(n^2))
@@ -221,4 +222,30 @@ var findKthLargest = function(nums, k) {
   // heap頂部就是第k大的值
   return minHeap.peek();
 };
+```
+- ex #253:
+```js
+/*
+  priority queue(min heap):  
+  min heap裡存的是正在開會的meetimg room，比較基準為meeting end time
+  
+  steps:
+    1. 先從小到大排序start time: [[0, 30], [5, 10], [15, 20]]
+    2. 迭代排序好的intervals: 
+        i. 只要heap裡不為空，而且heap的peek值(end time)小於等於 迭代的start time，表示不用再多一個會議室，extract
+        ii. 如果為否，insert進heap(多一間會議室)
+ */
+const minMeetingRooms = intervals => {
+  const minHeap = new Heap('min');
+  
+  intervals.sort((a, b) => a[0] - b[0]);
+  
+  for (const interval of intervals) {
+    if (minHeap.values.length > 0 && minHeap.peek[1] <= interval[0]) {
+      minHeap.extract();
+    }
+    minHeap.insert(interval);
+  }
+  return minHeap.values.length;
+}
 ```
