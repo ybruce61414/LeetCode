@@ -192,3 +192,33 @@ heapify(arr) {
 }
 ```
 </details>
+
+###  Questions
+### Classics
+1.  [LeetCode 215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) ``medium`` 
+2.  [LeetCode 347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/description/) ``medium``: need to learn 3 methods
+- Strategy of K'th largest problem:
+> 1. Heap (nlogk): 求前k大就用min heap（因為值越大就會沉在heap的底部），保證min heap的size不超過k個，超過就踢除最小值（extract）:要先讓element先進去排序，超過長度才踢掉計算完後的最小值。可以想像校排成績前100這類的問題。
+> 2. quick select (best: O(n), worst: O(n^2))
+> 3. bucket sort O(n)
+
+- ex #215:
+```js
+//...
+
+var findKthLargest = function(nums, k) {
+  
+  const minHeap = new Heap('min');
+
+  for (const ele of nums) {
+    // 不管如何，先進去排序
+    minHeap.insert(ele);
+    if (minHeap.values.length > k) {
+      // 如果超過容量，剔除最小值
+      minHeap.extract()
+    }
+  }
+  // heap頂部就是第k大的值
+  return minHeap.peek();
+};
+```
