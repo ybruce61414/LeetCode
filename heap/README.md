@@ -232,6 +232,7 @@ var findKthLargest = function(nums, k) {
 ### Non-intuitive
 1.  [LeetCode 253. Meeting Rooms II](https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii) ``medium``: interesting
 1.  [LeetCode 23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) ``hard``: very common
+1.  [LeetCode 295. Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) ``hard``
 - ex #253:
 ```js
 /*
@@ -260,7 +261,7 @@ const minMeetingRooms = intervals => {
 }
 ```
 - ex #23:  
-<img src="assets/k-sorted-list.jpg" alt="heapify img" width="70%" height="70%" title="k-sorted img">
+<img src="assets/k-sorted-list.jpg" alt="heapify img" width="50%" height="50%" title="k-sorted img">
 
 ```js
 /*
