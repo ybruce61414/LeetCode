@@ -261,29 +261,30 @@ const minMeetingRooms = intervals => {
 ```
 - ex #23:  
 <img src="assets/k-sorted-list.jpg" alt="heapify img" width="80%" height="80%" title="k-sorted img">
+
 ```js
 /*
-  Meeting Rooms II
-  priority queue(min heap):  O(nlogn)
-  想法：利用min heap存下正在開會的meeting room，heap比較基準為end time(peek 就是最結束數的會議)
-  
-  steps:
-    1. 先從小到大排序start time: [[0, 30], [5, 10], [15, 20]]
-    2. 迭代排序好的intervals: 
-        i. 只要heap裡不為空，而且heap的peek值(end time)小於等於 迭代的start time，表示不用再多一個會議室，extract
-        ii. 如果為否，insert進heap(多一間會議室)
+  1. using min heap
+  2. 新鍊錶下一個節點，必定是k個鍊錶表頭中最小節點
  */
-const minMeetingRooms = intervals => {
+
+var mergeKLists = function(lists) {
   const minHeap = new Heap('min');
-  
-  intervals.sort((a, b) => a[0] - b[0]);
-  
-  for (const interval of intervals) {
-    if (minHeap.values.length > 0 && minHeap.peek[1] <= interval[0]) {
-      minHeap.extract();
-    }
-    minHeap.insert(interval);
+  const nullNode = new ListNode(null);
+  let p = nullNode;
+
+  for (let firstNode of lists) {
+    if (firstNode) minHeap.insert(firstNode)
   }
-  return minHeap.values.length;
-}
+
+  while (minHeap.values.length > 0) {
+    const pop = minHeap.extract();
+    p.next = pop;
+    p = pop;
+
+    if (pop && pop.next) minHeap.insert(pop.next)
+  }
+
+  return nullNode.next;
+};
 ```
