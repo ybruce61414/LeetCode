@@ -24,7 +24,7 @@ Note:  $$n = 2^{h+1} - 1$$
 
 proof2: 
 > - 就是求樹裡每個點高度的總和
-<img src="heapify.jpg" alt="heapify img" width="80%" height="80%" title="heapify img">
+<img src="assets/heapify.jpg" alt="heapify img" width="80%" height="80%" title="heapify img">
 
 
 ###  Usage
@@ -233,6 +233,34 @@ var findKthLargest = function(nums, k) {
 1.  [LeetCode 253. Meeting Rooms II](https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii) ``medium``: interesting
 1.  [LeetCode 23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) ``hard``: very common
 - ex #253:
+```js
+/*
+  Meeting Rooms II
+  priority queue(min heap):  O(nlogn)
+  想法：利用min heap存下正在開會的meeting room，heap比較基準為end time(peek 就是最結束數的會議)
+  
+  steps:
+    1. 先從小到大排序start time: [[0, 30], [5, 10], [15, 20]]
+    2. 迭代排序好的intervals: 
+        i. 只要heap裡不為空，而且heap的peek值(end time)小於等於 迭代的start time，表示不用再多一個會議室，extract
+        ii. 如果為否，insert進heap(多一間會議室)
+ */
+const minMeetingRooms = intervals => {
+  const minHeap = new Heap('min');
+  
+  intervals.sort((a, b) => a[0] - b[0]);
+  
+  for (const interval of intervals) {
+    if (minHeap.values.length > 0 && minHeap.peek[1] <= interval[0]) {
+      minHeap.extract();
+    }
+    minHeap.insert(interval);
+  }
+  return minHeap.values.length;
+}
+```
+- ex #23:
+  <img src="assets/k-sorted-list.jpg" alt="heapify img" width="80%" height="80%" title="k-sorted img">
 ```js
 /*
   Meeting Rooms II
