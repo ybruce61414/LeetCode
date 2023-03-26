@@ -260,7 +260,7 @@ const minMeetingRooms = intervals => {
 }
 ```
 - ex #23:
-  <img src="assets/k-sorted-list.jpg" alt="heapify img" width="80%" height="80%" title="k-sorted img">
+- <img src="assets/k-sorted-list.jpg" alt="heapify img" width="80%" height="80%" title="k-sorted img">
 ```js
 /*
   Meeting Rooms II
