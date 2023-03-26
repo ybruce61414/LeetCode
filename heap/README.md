@@ -24,7 +24,8 @@ Note:  $$n = 2^{h+1} - 1$$
 
 proof2: 
 > - 就是求樹裡每個點高度的總和
-![Alt text](heapify.jpg)
+<img src="heapify.jpg" alt="heapify img" width="80%" height="80%" title="heapify img">
+
 
 ###  Usage
 1.  Dijkastra's algorithm.
@@ -202,7 +203,6 @@ heapify(arr) {
 ### Classics
 1.  [LeetCode 215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) ``medium`` 
 2.  [LeetCode 347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/description/) ``medium`` (3 methods)
-3.  [LeetCode 253. Meeting Rooms II](https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii) ``medium``: interesting
 - Strategy of K'th largest problem:
 > 1. Heap (nlogk): 求前k大就用min heap(因為值越大就會沉在heap的底部)，保證min heap的size不超過k個，超過就踢除最小值(extract):要先讓element進去排序，超過長度才踢掉計算完後的最小值。可以想像校排成績前100這類的問題: 台大只錄取前100名(k=100)，heap size=100，第101個進來後重新排序，算出最小值再把他踢除。
 > 2. quick select (best: O(n), worst: O(n^2))
@@ -228,9 +228,14 @@ var findKthLargest = function(nums, k) {
   return minHeap.peek();
 };
 ```
-- ex #253 Meeting Rooms II:
+
+### Non-intuitive
+1.  [LeetCode 253. Meeting Rooms II](https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms-ii) ``medium``: interesting
+1.  [LeetCode 23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) ``hard``: very common
+- ex #253:
 ```js
 /*
+  Meeting Rooms II
   priority queue(min heap):  O(nlogn)
   想法：利用min heap存下正在開會的meeting room，heap比較基準為end time(peek 就是最結束數的會議)
   
