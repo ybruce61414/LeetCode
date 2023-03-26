@@ -24,7 +24,7 @@ Note:  $$n = 2^{h+1} - 1$$
 
 proof2: 
 > - 就是求樹裡每個點高度的總和
-<img src="assets/heapify.jpg" alt="heapify img" width="70%" height="70%" title="heapify img">
+<img src="assets/heapify.jpg" alt="heapify img" width="60%" height="60%" title="heapify img">
 
 
 ###  Usage
@@ -261,7 +261,7 @@ const minMeetingRooms = intervals => {
 }
 ```
 - ex #23:  
-<img src="assets/k-sorted-list.jpg" alt="heapify img" width="50%" height="50%" title="k-sorted img">
+<img src="assets/k-sorted-list.jpg" alt="heapify img" width="60%" height="60%" title="k-sorted img">
 
 ```js
 /*
