@@ -7,3 +7,5 @@ console.log(arr1.sort((a, b) =>a - b))
 const func1 = () => {
 
 }
+
+
