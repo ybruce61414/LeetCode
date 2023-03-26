@@ -259,8 +259,8 @@ const minMeetingRooms = intervals => {
   return minHeap.values.length;
 }
 ```
-- ex #23:
-- <img src="assets/k-sorted-list.jpg" alt="heapify img" width="80%" height="80%" title="k-sorted img">
+- ex #23: \
+<img src="assets/k-sorted-list.jpg" alt="heapify img" width="80%" height="80%" title="k-sorted img">
 ```js
 /*
   Meeting Rooms II
