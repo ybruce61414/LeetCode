@@ -39,6 +39,30 @@ const selectionSort1 = (arr) => {
   return arr;
 };
 
+
+const selectionSort202304 = arr => {
+  const swap = (idx1, idx2, arr) => {
+    if(idx1 === idx2) return;
+    let temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
+  };
+
+  const size = arr.length;
+
+  for (let i = 0; i < size - 1; i++) {
+    let temp = { val: -Infinity, idx: null };
+    for (let j = 0; j < size - i; j++) {
+      if (temp.val < arr[j]) {
+        temp.val = arr[j];
+        temp.idx = j;
+      }
+    }
+    swap(size - 1 - i, temp.idx, arr);
+  }
+  return arr;
+};
+
 const arr1 = [2, 5, 8, 3, 9, 4, 1];
 const arr2 = [3, -9, -12, -1, 8];
 const arr3 = [20, 20, 31, 56, 1, 12, 12];

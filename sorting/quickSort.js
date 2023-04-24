@@ -1,5 +1,5 @@
 const partitionFirst = (arr, start, end) => {
-  // in-place
+  // in-place (single pointer)
   let pivot = arr[start];
   let swapIdx = start;
 
@@ -19,6 +19,46 @@ const partitionFirst = (arr, start, end) => {
   return swapIdx;
 };
 
+
+
+const partition202304 = (arr, start, end) => {
+  // two pointer
+  let left = start + 1;
+  let right = end;
+  let pivot = arr[start];
+  let swapIdx = start;
+
+  const swap = (idx1, idx2) => {
+    let temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
+  }
+
+  while (left < right) {
+    if (arr[left] < pivot) {
+      left += 1;
+    } else {
+      if (arr[right] < pivot) {
+        swap(left, right);
+        left += 1;
+        right -= 1;
+      } else {
+        right -= 1;
+      }
+    }
+  }
+
+  swap(left, swapIdx);
+  return left;
+}
+
+
+
+
+
+
+
+
 const quickSort = (arr, start = 0, end = arr.length - 1) => {
   if (start < end) {
     let pivotIdx = partitionFirst(arr, start, end);
@@ -33,6 +73,10 @@ const arr1 = [4, 6, 9, 1, 2, 5];
 const arr2 = [3, 2, 1, 5, 6, 4];
 
 // console.log(partitionFirst([[3,2,1,5,6,4]], 0, 7));
-console.log(partitionFirst([[3, 2, 1, 5, 6, 4]], 3, 5));
+console.log('partitionFirst--', partitionFirst([[3, 2, 1, 5, 6, 4]], 3, 5));
 
 // console.log(quickSort(arr2));
+
+
+
+// console.log('----partition202304',partition202304([50, 25,92, 16, 76, 30, 43, 54, 19], 0, 8))
