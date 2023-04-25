@@ -1,7 +1,7 @@
 # Binary Search Note
 ####    Basics
-1.  [LeetCode 704. Binary Search](https://leetcode.com/problems/binary-search/) ``easy``
-1.  [LeetCode 69. Sqrt(x)](https://leetcode.com/problems/sqrtx/) ``easy``
+- [LeetCode 704. Binary Search](https://leetcode.com/problems/binary-search/) ``easy``
+- [LeetCode 69. Sqrt(x)](https://leetcode.com/problems/sqrtx/) ``easy``
 
 
 <details>
@@ -58,8 +58,8 @@ var mySqrt = function(x) {
 </details>
 
 ####    Trick1: Find first greater or equal 
-1.  [LeetCode 35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) ``easy``
-2.  [LeetCode 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) ``medium``
+-   [LeetCode 35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) ``easy``
+-   [LeetCode 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) ``medium``
 
 <details>
     <summary>35.  </summary>
@@ -114,8 +114,8 @@ const findFirstGreaterOrEqual = (arr, tar) => {
 </details>
 
 ####    Trick2: Find Pivot of Rotated Sorted Array
-1.  [LeetCode 153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) ``medium``
-1.  [LeetCode 33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ``medium``
+-   [LeetCode 153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) ``medium``
+-   [LeetCode 33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ``medium``
 <details>
     <summary>153.  </summary>
 
