@@ -9,3 +9,24 @@ const func1 = () => {
 }
 
 
+
+const swap = (arr, idx1, idx2) => {
+  let temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+};
+
+const quickSelect = (arr, left, right) => {
+  let pivot = arr[left];
+  let s = left;
+
+  for (let i = left + 1; i <= right; i++) {
+    if (arr[i] < pivot) {
+      s += 1;
+      swap(arr, i, s)
+    }
+  }
+  return s;
+}
+
+console.log('--quickSelect', quickSelect([3,2,1,5,6,4],0,5))

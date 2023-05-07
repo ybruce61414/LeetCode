@@ -116,6 +116,7 @@ const findFirstGreaterOrEqual = (arr, tar) => {
 ####    Trick2: Find Pivot of Rotated Sorted Array
 -   [LeetCode 153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) ``medium``
 -   [LeetCode 33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) ``medium``
+-   [LeetCode 81. Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) ``medium``: findPivot can't work
 <details>
     <summary>153.  </summary>
 
@@ -187,3 +188,12 @@ const findPivot = arr => {
 };
 ```
 </details>
+
+
+####    Trick3: Find Peak 
+-   [LeetCode 852. Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/) ``medium`` (single peak)
+-   [LeetCode 162. Find Peak Element](https://leetcode.com/problems/find-peak-element/) ``medium`` (multiple peaks)
+
+####    Non-intuitive
+-   [LeetCode 875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) ``medium`` 
+-   [LeetCode 1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) ``medium`` 
