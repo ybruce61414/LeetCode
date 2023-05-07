@@ -197,3 +197,7 @@ const findPivot = arr => {
 ####    Non-intuitive
 -   [LeetCode 875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) ``medium`` 
 -   [LeetCode 1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) ``medium`` 
+-   [LeetCode 4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/description/) ``hard`` 
+-   [LeetCode 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) ``hard`` 
+-   [LeetCode 354. Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/) ``hard`` 
+-   [LeetCode 410. Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/description/) ``hard`` 
