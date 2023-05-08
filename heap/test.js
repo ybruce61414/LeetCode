@@ -30,3 +30,6 @@ const quickSelect = (arr, left, right) => {
 }
 
 console.log('--quickSelect', quickSelect([3,2,1,5,6,4],0,5))
+
+const test1 = [1,2,3,4,5]
+console.log('----', Math.min(...test1))
