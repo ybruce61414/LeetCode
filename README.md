@@ -3,7 +3,7 @@
 
 
 1. [Binary-Search](binary-search/README.md)
-2. Backtracking
+2. [Backtracking](backtracking/README.md)
 3. Tree
 4. Linked-List
 5. [Union-Find](union-find/README.md)
