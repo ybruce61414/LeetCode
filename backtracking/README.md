@@ -17,6 +17,7 @@
 - [LeetCode 17.  Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/) ``miedium``
 - [LeetCode 93.  Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) ``miedium``
 - [LeetCode 494.  Target Sum](https://leetcode.com/problems/target-sum/description/) ``miedium``
+- [LeetCode 526.  Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement/) ``miedium``
 - [LeetCode 698.  Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) ``miedium``
 
 ####    Reference
