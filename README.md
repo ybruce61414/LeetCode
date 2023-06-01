@@ -10,3 +10,7 @@
 6. [Heap](heap/README.md)
 7. [Graph](graph/README.md)
 8. Sorting
+9. Sliding Window
+10. Two pointer
+11. Interval
+12. Dynamic Programming
