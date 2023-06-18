@@ -1,4 +1,11 @@
 # Tree
+#### Main Concept
+Tree traversal:
+1. pre-order *VLR*
+2. in-order *LVR*
+3. post-order *LRV*
+- note:
+    - > V: visiting current node, L: left child, R: right child
 ####    Basics
 *must*:
 - [ ] 1.[LeetCode 100. Same Tree](https://leetcode.com/problems/same-tree/) ``easy``
