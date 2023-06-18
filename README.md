@@ -4,7 +4,7 @@
 
 1. [Binary-Search](binary-search/README.md)
 2. [Backtracking](backtracking/README.md)
-3. Tree
+3. [Tree](tree/README.md)
 4. Linked-List
 5. [Union-Find](union-find/README.md)
 6. [Heap](heap/README.md)
