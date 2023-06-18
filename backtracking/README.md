@@ -22,8 +22,9 @@
 4. [LeetCode 22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) ``miedium``
 5. [LeetCode 526.  Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement/) ``miedium``
 6. [LeetCode 698.  Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) ``miedium``
-6. [LeetCode 36.  Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) ``miedium``
-6. [LeetCode 37.  Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) ``hard``
+7. [LeetCode 36.  Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) ``miedium``
+8. [LeetCode 638.  Shopping Offers](https://leetcode.com/problems/shopping-offers/description/) ``miedium``
+9. [LeetCode 37.  Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) ``hard``
 
 ####    Reference
 - [回溯算法入门级详解 + 练习](https://leetcode.cn/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/)
