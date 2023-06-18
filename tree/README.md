@@ -16,6 +16,7 @@ Tree traversal:
 - [ ] 6.[LeetCode 543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) ``easy``
 - [ ] 7.[LeetCode 572. Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) ``easy``
 - [ ] 8.[LeetCode 617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) ``easy``
+1. [LeetCode 110. Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/) ``easy``
 1. [LeetCode 111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/description/) ``easy``
 2. [LeetCode 113. Path Sum ||](https://leetcode.com/problems/path-sum-ii/) ``medium``
 3. [LeetCode 257. Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) ``easy``
@@ -25,12 +26,15 @@ Tree traversal:
 
 #### Advanced
 1. [LeetCode 96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) ``medium``
-2. [LeetCode 103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) ``medium``
-3. [LeetCode 109. Convert Sorted List to Binary Search Tree](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/) ``medium``
-4. [LeetCode 230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) ``medium`` interesting
-5. [LeetCode 236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ``medium``
+2. [LeetCode 98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) ``medium``
+3. [LeetCode 103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) ``medium``
+4. [LeetCode 109. Convert Sorted List to Binary Search Tree](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/) ``medium``
+5. [LeetCode 199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) ``medium``
+6. [LeetCode 230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) ``medium`` interesting
+7. [LeetCode 236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) ``medium``
 
 
 
 ####    Reference
 - [LeetCode tree](https://leetcode.com/tag/tree/)
+- [Binary Tree: Traversal(尋訪)](http://alrightchiu.github.io/SecondRound/binary-tree-traversalxun-fang.html)
