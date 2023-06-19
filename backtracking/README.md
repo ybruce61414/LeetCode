@@ -11,8 +11,10 @@
 #### Advanced
 1. [LeetCode 40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) ``medium``
 2. [LeetCode 47.  Permutations II](https://leetcode.com/problems/permutations-ii/) ``miedium``
+2. [LeetCode 79.  Word Search](https://leetcode.com/problems/word-search/) ``miedium`` classic, todo
+2. [LeetCode 139.  Word Break](https://leetcode.com/problems/word-break/description/) ``miedium`` classic, todo
 3. [LeetCode 90.  Subsets II](https://leetcode.com/problems/subsets-ii/) ``miedium``
-4. [LeetCode 131.  Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) ``miedium``
+4. [LeetCode 131.  Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) ``miedium`` classic, todo
 5. [LeetCode 1079. Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/) ``miedium``
 
 ####    Non-intuitive
@@ -24,7 +26,13 @@
 6. [LeetCode 698.  Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) ``miedium``
 7. [LeetCode 36.  Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) ``miedium``
 8. [LeetCode 638.  Shopping Offers](https://leetcode.com/problems/shopping-offers/description/) ``miedium`` memo: kind of hard.. 生活化的題目
-9. [LeetCode 37.  Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) ``hard``
+
+#### Hard
+1. [LeetCode 37.  Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) ``hard``
+1. [LeetCode 51.  N-Queens](https://leetcode.com/problems/n-queens/) ``hard``
+2. [LeetCode 212.  Word Search II](https://leetcode.com/problems/word-search-ii/) ``hard``
+3. [LeetCode 871.  Minimum Number of Refueling Stops](https://leetcode.com/problems/minimum-number-of-refueling-stops/description/) ``hard``
+
 
 ####    Reference
 - [回溯算法入门级详解 + 练习](https://leetcode.cn/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/)
