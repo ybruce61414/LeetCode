@@ -23,7 +23,7 @@
 5. [LeetCode 526.  Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement/) ``miedium``
 6. [LeetCode 698.  Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) ``miedium``
 7. [LeetCode 36.  Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) ``miedium``
-8. [LeetCode 638.  Shopping Offers](https://leetcode.com/problems/shopping-offers/description/) ``miedium``
+8. [LeetCode 638.  Shopping Offers](https://leetcode.com/problems/shopping-offers/description/) ``miedium`` memo: kind of hard.. 生活化的題目
 9. [LeetCode 37.  Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) ``hard``
 
 ####    Reference
