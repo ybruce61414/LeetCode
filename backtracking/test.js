@@ -1,9 +1,19 @@
-let raw = '';
-let temp = ['a', 'b', 'c']
+var sumRootToLeaf = function(root) {
+  const res = []
 
-for (let i = 0; i < 3; i++) {
-  raw += '()'
-}
+  const dfs = (node, temp) => {
+    if (!node) {
+      res.push([...temp])
+      return;
+    }
 
-console.log('----', temp.join(''))
+    temp.push(node.val)
+
+    if (node.left) dfs(node.left, temp)
+    if (node.right) dfs(node.right, temp)
+  }
+
+};
+
+console.log('---', parseInt('11', 2))
 
