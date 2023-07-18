@@ -11,12 +11,15 @@
 - [ ] 5.[LeetCode 21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/) ``easy`` like: 19.1k, dislike: 1.8k
 - [ ] 6.[LeetCode 141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) ``easy`` like: 12.9k, dislike: 1.1k
 - [ ] 7.[LeetCode 138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ``medium`` like: 11.6k, dislike: 1.2k
-  - reference: [great explanation](https://leetcode.cn/problems/copy-list-with-random-pointer/solution/liang-chong-shi-xian-tu-jie-138-fu-zhi-dai-sui-ji-/)
+    - good example for creating new node 
+    - reference: [great explanation](https://leetcode.cn/problems/copy-list-with-random-pointer/solution/liang-chong-shi-xian-tu-jie-138-fu-zhi-dai-sui-ji-/)
 
 
 
 #### Advanced
 1. [LeetCode 86. Partition List](https://leetcode.com/problems/partition-list/description/) ``medium`` like: 5.6k, dislike: 641 (dummy node精髓)
+1. [LeetCode 61. Rotate List](https://leetcode.com/problems/rotate-list/) ``medium`` like: 8.2k, dislike: 1.4k
+1. [LeetCode 143. Reorder List](https://leetcode.com/problems/reorder-list/) ``medium`` like: 9.2k, dislike: 304
 
 
 ####    Reference
