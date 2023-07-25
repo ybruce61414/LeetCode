@@ -24,22 +24,22 @@ copy the old one into the new one, this is expensive O(n).
 2. Doubly linked list
 3. Circular linked list
 
-###  Operations
-- Traversing the list
-- Inserting an item in the list
-- Deleting an item from the list
+####  Operations
+- **Traversing** the list
+- **Inserting** node in the list
+- **Deleting** node from the list
 ***
 
 ##  Questions
 ####    Basics
 *must*:
 - Traversing 
-  - always using 2 pointer (cur, pev)
+  - always using 2 pointer (cur,pev or fast,slow) 
   - [ ] 1.[LeetCode 206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/description/) ``easy`` like: 18.5k, dislike: 342
   - [ ] 2.[LeetCode 876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) ``easy`` like: 9.9k, dislike: 289
   - [ ] 3.[LeetCode 141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) ``easy`` like: 12.9k, dislike: 1.1k
 - Deleting 
-  - head node有可能消失 -> dummy node
+  - head node有可能消失或易位 -> dummy node
   - [ ] 4.[LeetCode 203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) ``easy`` like: 7.5k, dislike: 211
   - [ ] 5.[LeetCode 83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) ``easy`` like: 7.6k, dislike: 254
   - [ ] 6.[LeetCode 19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) ``medium`` like: 16.5k, dislike: 683
