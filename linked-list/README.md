@@ -10,6 +10,8 @@ and can grow and shrink on demand. Each node is made up of 2 items: the data and
 |--------------------|-------|-------------|
 | Searching          | O(1)  | O(n)        |
 | Insertion/Deletion | O(n)  | O(1)        |
+
+
 Note: 
   - Array has complex position-based insertion:
     -  to add more element to array when full, we must create a new array and 
