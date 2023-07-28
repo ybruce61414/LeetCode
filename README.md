@@ -2,15 +2,18 @@
 ###    Patterns
 
 
-1. [Binary-Search](binary-search/README.md)
-2. [Backtracking](backtracking/README.md)
-3. [Tree](tree/README.md)
-4. [Linked-List](linked-list/README.md)
-5. [Union-Find](union-find/README.md)
-6. [Heap](heap/README.md)
-7. [Graph](graph/README.md)
-8. Sorting
-9. Sliding Window
-10. Two pointer
-11. Interval
-12. Dynamic Programming
+1. Linear 
+   1. [Binary-Search](binary-search/README.md)
+   2. Two pointer
+   3. Sliding Window
+   4. Sorting
+   5. Interval
+   6. [Linked-List](linked-list/README.md)
+   7. 1-D Dynamic Programming
+2. Non-linear 
+   1. [Backtracking](backtracking/README.md)
+   2. [Tree](tree/README.md)
+   3. [Heap](heap/README.md)
+   4. [Union-Find](union-find/README.md)
+   5. [Graph](graph/README.md)
+   6. 2-D Dynamic Programming
