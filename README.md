@@ -5,7 +5,7 @@
 1. Linear 
    1. [Binary-Search](binary-search/README.md)
    2. Two pointer
-   3. Sliding Window
+   3. [Sliding Window](sliding-window/README.md)
    4. Sorting
    5. Interval
    6. [Linked-List](linked-list/README.md)
