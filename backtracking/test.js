@@ -17,3 +17,11 @@ var sumRootToLeaf = function(root) {
 
 console.log('---', parseInt('11', 2))
 
+const map = new Map()
+
+map.set('gender', 'male')
+map.set('name', 'viola')
+let [first, second] = map.keys()
+
+console.log(first, second, map.keys())
+
