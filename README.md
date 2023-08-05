@@ -6,7 +6,7 @@
    1. [Binary-Search](binary-search/README.md)
    2. Two pointer
    3. [Sliding Window](sliding-window/README.md)
-   4. Sorting
+   4. [Sorting](sorting/README.md)
    5. Interval
    6. [Linked-List](linked-list/README.md)
    7. 1-D Dynamic Programming
