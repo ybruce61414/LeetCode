@@ -10,7 +10,7 @@
      
 
 |                           | Merge sort                | Quick sort |
-        |---------------------------|------------| -----|
+|---------------------------|------------|------------|
 | Best case complexity        | O(nlogn)                  | O(nlogn)   |
 | Worst case complexity       | O(nlogn)                  | O(n^2)     |
 | Worst case space complexity | O(n)                      | O(1)       |
