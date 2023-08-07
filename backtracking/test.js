@@ -58,8 +58,19 @@ const partition = (arr, left, right) => {
 
 const arr3 = ["3","6","7","10"]
 const arr4 = [3,6,7,10]
-
 const arr5 = [5,6,2,9,3]
-arr5.sort((a, b) => a - b)
-console.log('--',partition(arr3, 0, 3), arr3)
-console.log('--arr5',arr5)
+
+console.log('---', arr4.concat(99))
+
+
+const obj1 = {name: 'viola'}
+const obj2 = [{
+  company: 'trend',
+  info: {
+    date: '1010',
+    gender: 'male'
+  }
+}, [1,2,3]]
+
+console.log('----', typeof null)
+
