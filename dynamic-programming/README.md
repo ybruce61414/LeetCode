@@ -15,4 +15,3 @@
 - [ ] 5.[LeetCode 5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) ``medium`` 26.7k 
 - [ ] 6.[LeetCode 139. Word Break](https://leetcode.com/problems/word-break/description/) ``medium`` 15.9k hard!
   - [nice explanation](https://leetcode.cn/problems/word-break/solutions/302779/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/)
-  - 
