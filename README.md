@@ -9,7 +9,7 @@
    4. [Sorting](sorting/README.md)
    5. Interval
    6. [Linked-List](linked-list/README.md)
-   7. 1-D Dynamic Programming
+   7. [1-D Dynamic Programming](dynamic-programming/README.md)
 2. Non-linear 
    1. [Backtracking](backtracking/README.md)
    2. [Tree](tree/README.md)

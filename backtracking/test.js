@@ -74,3 +74,44 @@ const obj2 = [{
 
 console.log('----', typeof null)
 
+
+
+let s = 'abcd'
+
+
+
+const getPossiblePartitions = (s) => {
+  const res = []
+  let count = 0
+
+  const dfs = (idx, temp) => {
+    if(idx === s.length) {
+      res.push([...temp])
+      count += 1
+      return
+    }
+
+    for (let i = idx; i < s.length; i++) {
+      temp.push(s.slice(idx, i + 1))
+      dfs(i + 1, temp)
+      temp.pop()
+    }
+  }
+
+  dfs(0, [])
+  console.log('--count', count)
+  return res
+}
+//
+// console.log('-getPossiblePartitions--', getPossiblePartitions('abcd'))
+// console.log('abcd'.slice(0,1))
+// console.log('---', "01".charCodeAt(1))
+
+function test1(...args) {
+  console.log('---call test1', args)
+}
+
+console.log('test1', test1(1,2,3))
+
+let id = Symbol("id")
+console.log('---id', id)
