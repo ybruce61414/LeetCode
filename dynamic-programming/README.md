@@ -15,3 +15,7 @@
 - [ ] 5.[LeetCode 5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) ``medium`` 26.7k 
 - [ ] 6.[LeetCode 139. Word Break](https://leetcode.com/problems/word-break/description/) ``medium`` 15.9k hard!
   - [nice explanation](https://leetcode.cn/problems/word-break/solutions/302779/shou-hui-tu-jie-san-chong-fang-fa-dfs-bfs-dong-tai/)
+
+#### Advanced
+[ ] 1.[LeetCode 1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) ``medium`` 11.9k 2-d hard!
+- [nice explanation](https://leetcode.cn/problems/longest-common-subsequence/solutions/696763/zui-chang-gong-gong-zi-xu-lie-by-leetcod-y7u0/)
