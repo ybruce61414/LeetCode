@@ -7,6 +7,9 @@
    2. Two pointer
    3. [Sliding Window](sliding-window/README.md)
    4. [Sorting](sorting/README.md)
+      1. Quadratic sort
+      2. Linear logarithmic sort
+      3. Topological sort
    5. Interval
    6. [Linked-List](linked-list/README.md)
    7. [1-D Dynamic Programming](dynamic-programming/README.md)

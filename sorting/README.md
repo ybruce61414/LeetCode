@@ -79,4 +79,9 @@
    1. [LeetCode 88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) ``easy`` like: 11.8k, dislike: 1.2 (basic)
    2. [LeetCode 21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) ``easy`` like: 19.4k, dislike: 1.8k (蠻難想到用recursive)
 
+#### Topological sort
+  1. [LeetCode 207. Course Schedule](https://leetcode.com/problems/course-schedule/) ``medium`` like: 15k, dislike: 599
+  2. [LeetCode 210. Course Schedule](https://leetcode.com/problems/course-schedule-ii/) ``medium`` like: 9.9k, dislike: 311
+  3. [LeetCode 802. Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/) ``medium`` like: 9.9k, dislike: 311
+  3. [LeetCode 2192. All Ancestors of a Node in a Directed Acyclic Graph](https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/) ``medium`` like: 958, dislike: 13
 ####    Reference
