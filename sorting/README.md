@@ -7,6 +7,8 @@
  - Linear logarithmic O(nlogn)
    1. **Merge sort**
    2. **Quick sort**
+ - Topological sort
+   - *todo*
      
 
 |                           | Merge sort                | Quick sort |
@@ -84,4 +86,5 @@
   2. [LeetCode 210. Course Schedule](https://leetcode.com/problems/course-schedule-ii/) ``medium`` like: 9.9k, dislike: 311
   3. [LeetCode 802. Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/) ``medium`` like: 9.9k, dislike: 311
   3. [LeetCode 2192. All Ancestors of a Node in a Directed Acyclic Graph](https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/) ``medium`` like: 958, dislike: 13
+  3. [LeetCode 1976. Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/) ``medium`` like: 2.4k, dislike: 91
 ####    Reference
