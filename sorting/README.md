@@ -2,11 +2,12 @@
 ####    Comparison-based
  - Quadratic O(n^2)
    1. Bubble sort
-   > 1. 每一個pass能找出next large的元素
+   > 1. 每一個pass能找出next large的元素（first pass找出最大值，sec pass找出第二大值）
    > 2. 總共的pass有（nums.length - 1）次
-   > 3. 每一個pass會向右跑 （length - step - 1）次，每次比較後把大的swap到右邊
-   > 4. best case O(n)： 如果first pass沒有swap表示list原本就是sorted的
-   2. Selection sort
+   > 3. 每一個pass會向右比較 （length - step - 1）次，每次比較後把大值swap到右邊
+   > 4. swap 是expensive的操作，bubble sort會有過多的swap
+   > 5. best case O(n)： 如果first pass沒有swap表示list原本就是sorted的
+     2. Selection sort
    > 1. 針對每一個位置，找出該位置對應的元素。
    > 2. ex: 固定i = 0，scan from i + 1找出最小的元素後跟它swap。
    > 3. ex: 固定i = 1，scan from i + 1找出第二小的元素後跟它swap。
