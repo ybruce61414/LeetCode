@@ -2,8 +2,20 @@
 ####    Comparison-based
  - Quadratic O(n^2)
    1. Bubble sort
+   > 1. 每一個pass能找出next large的元素
+   > 2. 總共的pass有（nums.length - 1）次
+   > 3. 每一個pass會向右跑 （length - step - 1）次，每次比較後把大的swap到右邊
+   > 4. best case O(n)： 如果first pass沒有swap表示list原本就是sorted的
    2. Selection sort
+   > 1. 針對每一個位置，找出該位置對應的元素。
+   > 2. ex: 固定i = 0，scan from i + 1找出最小的元素後跟它swap。
+   > 3. ex: 固定i = 1，scan from i + 1找出第二小的元素後跟它swap。
+   > 4. best case O(n^2)
    3. Insertion sort
+    > 1.  保持左邊為sorted array
+    > 2.  迭代每個element，每個round把element放到對的position
+    > 3.  比較左邊sorted array，所以起始idx = 1
+    > 4. best case O(n)
  - Linear logarithmic O(nlogn)
    1. **Merge sort**
    2. **Quick sort**
