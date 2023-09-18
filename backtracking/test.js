@@ -45,4 +45,73 @@ const myObject = new MyClass();
 
 // 调用实例方法
 console.log(myObject.myInstanceMethod())
-console.log(myObject.myStaticMethod())
+// console.log(myObject.myStaticMethod())
+
+
+const dec = (callback, num) => {
+  return function(...args) {
+    return callback.apply(this, [...args, num])
+  }
+}
+
+const func1 = (...args) => {
+  return args.reduce((acc, cur) => acc + cur)
+}
+
+const decEx1 = dec(func1, 3)
+
+// console.log('---', decEx1(1,2,3))
+
+const testObj = {
+  name: 'ellen',
+  gender: 'female',
+  major: 'law',
+}
+
+for (let key in testObj) {
+  console.log('--key-', key)
+}
+
+let permissions1 = { canView: true }
+let permissions2 = { canEdit: true }
+// copies all properties from permissions1 and permissions2 into user
+Object.assign(testObj, permissions1, permissions2)
+
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+}
+
+
+const obj1 = { name: 'viola' }
+const obj2 = { name: 'viola' }
+const obj3 = obj1
+
+// console.log('--', obj1 == obj3)
+
+
+let animal = {
+  walk() {
+    if (!this.isSleeping) {
+      alert(`I walk`)
+    }
+  },
+  sleep() {
+    this.isSleeping = true
+  }
+}
+
+let rabbit = {
+  name: "White Rabbit",
+  __proto__: animal
+}
+
+// modifies rabbit.isSleeping
+rabbit.sleep()
+
+console.log('--', rabbit.isSleeping, rabbit)
+
+function cat() {}
+console.log('--', cat.__proto__)

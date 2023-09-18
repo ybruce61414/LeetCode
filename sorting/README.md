@@ -20,8 +20,9 @@
  - Linear logarithmic O(nlogn)
    1. **Merge sort**
    2. **Quick sort**
- - Topological sort
-   - *todo*
+   3. __Heap sort__
+ - Topological sort (Topological ordering)
+   - 把有相依性的nodes，做有效的排序
      
 
 |                           | Merge sort                | Quick sort |

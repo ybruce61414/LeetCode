@@ -2,12 +2,15 @@
 #### Main Concept
 Tree traversal:
 1. pre-order *VLR*
-2. in-order *LVR*
+2. in-order *LVR* (binary search tree的inorder是有序排列)
 3. post-order *LRV*
 - note:
     - > V: visiting current node, L: left child, R: right child
+- tricks: 
+  - > 很多比較難的題目都是要去設計dfs 的 *return* 值。
 ####    Basics
 *must*:
+- 算tree height (dfs 要有return值，重點是有左右子樹的post process)的衍生題:#543, #110
 - [ ] 1.[LeetCode 100. Same Tree](https://leetcode.com/problems/same-tree/) ``easy``
 - [ ] 2.[LeetCode 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) ``easy``
 - [ ] 3.[LeetCode 102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) ``easy``
