@@ -57,9 +57,12 @@ var mySqrt = function(x) {
 ```
 </details>
 
-####    Trick1: Find first greater or equal 
--   [LeetCode 35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) ``easy``
--   [LeetCode 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) ``medium``
+####    Trick1: 
+1. Find __first greater__ or equal to
+   -   [LeetCode 35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) ``easy``
+   -   [LeetCode 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) ``medium``
+2. Find __first smaller__ or equal to
+   - [LeetCode 981. Time Based Key-Value Store](https://leetcode.com/problems/time-based-key-value-store/) ``medium``
 
 <details>
     <summary>35.  </summary>

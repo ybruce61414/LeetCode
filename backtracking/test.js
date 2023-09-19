@@ -115,3 +115,9 @@ console.log('--', rabbit.isSleeping, rabbit)
 
 function cat() {}
 console.log('--', cat.__proto__)
+console.log('---', typeof NaN)
+
+const list1 = [1]
+const list2 = [1]
+
+console.log('--', list1 === list2)
