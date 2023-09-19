@@ -10,6 +10,9 @@
       1. Quadratic sort
       2. Linear logarithmic sort
       3. Topological sort
+      4. Utils: 
+         - Quick select (partition): alternative for _Heap_ 
+         - Merge 2 sorted array
    5. [Interval](interval/README.md)
    6. [Linked-List](linked-list/README.md)
    7. [1-D Dynamic Programming](dynamic-programming/README.md)
