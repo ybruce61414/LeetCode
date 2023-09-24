@@ -1,12 +1,18 @@
 # Backtracking
 ####    Basics
+*must*:
+- Permutation (排列) `O(n!)`
+  - > for loop recursive迭代所有項目，除了自己之外。
+  - [ ] 1.[LeetCode 46. Permutations](https://leetcode.com/problems/permutations/) ``miedium``
+- Combination (組合) `O(2^n)` or `O(n!)`
+  - > for loop recursive只迭代自己後面的項目。
+  - [ ] 1.[LeetCode 78. Subsets](https://leetcode.com/problems/subsets/description/) ``medium`` `O(2^n)`
+  - [ ] 2.[LeetCode 77. Combinations](https://leetcode.com/problems/combinations/) ``medium`` `O(n!)`
+  - [ ] 3.[LeetCode 131.  Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) ``miedium`` classic
 1. [LeetCode 39. Combination Sum](https://leetcode.com/problems/combination-sum/description/) ``medium``
-2. [LeetCode 46. Permutations](https://leetcode.com/problems/permutations/) ``miedium``
-3. [LeetCode 77. Combinations](https://leetcode.com/problems/combinations/) ``medium``
-4. [LeetCode 78. Subsets](https://leetcode.com/problems/subsets/description/) ``medium``
 5. [LeetCode 491. Non-decreasing Subsequences](https://leetcode.com/problems/non-decreasing-subsequences/) ``medium``
 - note:
-  - > sorting是為了可以剪枝 (pruning)，但是搜索問題一般複雜度較高，能剪枝就盡量剪枝。
+  > sorting是為了可以剪枝 (pruning)，但是搜索問題一般複雜度較高，能剪枝就盡量剪枝。
 
 #### Advanced
 1. [LeetCode 40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) ``medium``
@@ -14,7 +20,6 @@
 2. [LeetCode 79.  Word Search](https://leetcode.com/problems/word-search/) ``miedium`` classic, todo
 2. [LeetCode 139.  Word Break](https://leetcode.com/problems/word-break/description/) ``miedium`` classic, todo
 3. [LeetCode 90.  Subsets II](https://leetcode.com/problems/subsets-ii/) ``miedium``
-4. [LeetCode 131.  Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) ``miedium`` classic, todo
 5. [LeetCode 1079. Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/) ``miedium``
 
 ####    Non-intuitive
@@ -37,3 +42,4 @@
 ####    Reference
 - [回溯算法入门级详解 + 练习](https://leetcode.cn/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/)
 - [Leetcode backtracking sorted by **Acceptance**](https://leetcode.com/tag/backtracking/)
+- [排列組合 - 中山大學應數系lecture](http://www.math.nsysu.edu.tw/eprob/PerComb.htm)
