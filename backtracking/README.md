@@ -4,6 +4,9 @@
 - Permutation (排列) `O(n!)`
   - > for loop recursive迭代所有項目，除了自己之外。
   - [ ] 1.[LeetCode 46. Permutations](https://leetcode.com/problems/permutations/) ``miedium``
+  - [ ] 2.[LeetCode 47.  Permutations II](https://leetcode.com/problems/permutations-ii/) ``miedium``
+    - key1: 每一個recursive loop是除了自己之外，做一個visited的訪問紀錄（array）+ temp
+    - key2: 重複元素排列，相同元素在相同level只能迭代第一次，遇到以迭代過元素continue
 - Combination (組合) `O(2^n)` or `O(n!)`
   - > for loop recursive只迭代自己後面的項目，因為跟順序無關，如果考慮前面就會有重複組合。
   - [ ] 1.[LeetCode 78. Subsets](https://leetcode.com/problems/subsets/description/) ``medium`` `O(2^n)`
@@ -18,7 +21,6 @@
   > sorting是為了可以剪枝 (pruning)，但是搜索問題一般複雜度較高，能剪枝就盡量剪枝。
 
 #### Advanced
-2. [LeetCode 47.  Permutations II](https://leetcode.com/problems/permutations-ii/) ``miedium``
 2. [LeetCode 79.  Word Search](https://leetcode.com/problems/word-search/) ``miedium`` classic, todo
 2. [LeetCode 139.  Word Break](https://leetcode.com/problems/word-break/description/) ``miedium`` classic, todo
 3. [LeetCode 90.  Subsets II](https://leetcode.com/problems/subsets-ii/) ``miedium``

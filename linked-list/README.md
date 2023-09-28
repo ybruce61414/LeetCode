@@ -43,6 +43,8 @@ copy the old one into the new one, this is expensive O(n).
   - [ ] 4.[LeetCode 203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) ``easy`` like: 7.5k, dislike: 211
   - [ ] 5.[LeetCode 83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) ``easy`` like: 7.6k, dislike: 254
   - [ ] 6.[LeetCode 19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) ``medium`` like: 16.5k, dislike: 683
+- Scan and Clone
+  - [ ] 7. [LeetCode 2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) ``medium`` like: 28.5k, dislike: 5.5k
 
 
 

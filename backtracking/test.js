@@ -139,3 +139,16 @@ const isPalindrome = str => {
 }
 
 console.log('---is', isPalindrome('aaba'))
+
+const map1 = {
+  id: '123',
+  name: 'viola'
+}
+
+for (const entry of Object.entries(map1)) {
+  console.log('-ee', entry)
+}
+
+const arr3 = [1,2,3]
+const str7 = '?assetype=2'
+console.log('---ar3', str7.match(/[?&]assetType=([^&]+)/)?.[1])
