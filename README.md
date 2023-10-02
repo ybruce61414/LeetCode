@@ -12,7 +12,7 @@
       4. Utils: 
          - Quick select (partition): alternative for _Heap_ 
          - Merge 2 sorted array
-   4. Stack
+   4. [Stack](monotonic-stack-queue/README.md)
    5. Two pointer
    6. [Sliding Window](sliding-window/README.md)
    7. [Interval](interval/README.md)
