@@ -151,4 +151,6 @@ for (const entry of Object.entries(map1)) {
 
 const arr3 = [1,2,3]
 const str7 = '?assetype=2'
-console.log('---ar3', str7.match(/[?&]assetType=([^&]+)/)?.[1])
+
+const arr4 = []
+console.log('---', arr4[-1])
