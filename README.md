@@ -20,7 +20,8 @@
 2. __Non-linear data structure__
    1. [Backtracking](backtracking/README.md)
    2. [Tree](tree/README.md)
-   3. [Heap](heap/README.md)
-   4. [Union-Find](union-find/README.md)
-   5. [Graph](graph/README.md)
-   6. 2-D Dynamic Programming
+   3. [Trie](trie/README.md)
+   4. [Heap](heap/README.md)
+   5. [Union-Find](union-find/README.md)
+   6. [Graph](graph/README.md)
+   7. 2-D Dynamic Programming
