@@ -1,12 +1,12 @@
 # Trie
 #### What is trie?
-A trie (pronounced "try") is a tree-like data structure used to efficiently store and retrieve a large set of _strings_, typically words, or keys that can be represented as character sequences. The term "trie" stands for "retrieval," and it is short for "reTRIEval."
+A trie (pronounced "try") is a tree-like data structure (prefix tree) used to efficiently store and retrieve a large set of _strings_, typically words, or keys that can be represented as character sequences. The term "trie" stands for "retrieval," and it is short for "reTRIEval."
 
 Tries are particularly useful for tasks like searching for words in a dictionary, autocomplete suggestions, spell checking, and IP routing. They provide fast data retrieval, making them more efficient than other data structures like hash tables or binary search trees for certain tasks.
 
 #### Why trie?
 Efficient Prefix Searching (or auto-complete)
-- Searching for a String even in the large collection of strings in a Trie data structure can be done in `O(L)` Time complexity, Where `L` is the number of words in the query string. This searching time could be even less than `O(L)` if the query string does not exist in the trie.
+- Searching for a String even in the large collection of strings in a Trie data structure can be done in `O(L)`, Where `L` is the number of words in the query string. This searching time could be even less than `O(L)` if the query string does not exist in the trie.
 
 
 #### Key props of Trie
@@ -38,9 +38,9 @@ const Trie = function() {
 }
 
 // basic methods
-Trie.prototype.insert = function(word) {...}
-Trie.prototype.search = function(word) {...}
-Trie.prototype.startsWith = function(word) {...}
+Trie.prototype.insert = function(word) {...}     // O(k)
+Trie.prototype.search = function(word) {...}     // O(k)
+Trie.prototype.startsWith = function(word) {...} // O(k)
 
 // some tricks
 // using let charCode = char.charCodeAt(0) - 'a'.charCodeAt(0) to indicate index in child array 
