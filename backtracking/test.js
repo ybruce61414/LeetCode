@@ -138,19 +138,85 @@ const isPalindrome = str => {
   return true
 }
 
-console.log('---is', isPalindrome('aaba'))
 
 const map1 = {
   id: '123',
   name: 'viola'
 }
 
-for (const entry of Object.entries(map1)) {
-  console.log('-ee', entry)
-}
 
 const arr3 = [1,2,3]
 const str7 = '?assetype=2'
 
-const arr4 = []
-console.log('---', arr4[-1])
+var evalRPN = function(tokens) {
+  const signsSet = new Set(["+", "-", "*", "/"])
+  const stack = []
+
+  for (let token of tokens) {
+    if (signsSet.has(token)) {
+      const last1 = Number(stack.pop())
+      const last2 = Number(stack.pop())
+      console.log('--l1 l2', last1, last2)
+      let res = 0
+      switch (token) {
+        case '-':
+          res = last2 - last1
+          break
+        case '*':
+          res = last1 * last2
+          break
+        case '/':
+          res = last2 / last1
+          break
+        case '+':
+        default:
+          res = last1 + last2
+          break
+      }
+      stack.push(res)
+    } else {
+      stack.push(token)
+    }
+  }
+  return stack[0]
+};
+
+const preCal = expression => {
+  // return str.split(' ')
+  const signsSet = new Set(["+", "-", "*", "/"])
+  const tokens = expression.split(' ').reverse();
+  const stack = []
+
+  for (let token of tokens) {
+    if (signsSet.has(token)) {
+      const last1 = Number(stack.pop())
+      const last2 = Number(stack.pop())
+      let res = 0
+      switch (token) {
+        case '-':
+          res = last1 - last2
+          break
+        case '*':
+          res = last1 * last2
+          break
+        case '/':
+          res = last1 / last2
+          break
+        case '+':
+        default:
+          res = last1 + last2
+          break
+      }
+      stack.push(res)
+    } else {
+      stack.push(token)
+    }
+  }
+  return stack[0]
+}
+
+console.log('---', preCal("- 3 * 4 5"))
+console.log('---', preCal("0"))
+console.log('---', preCal("+ 3 4"))
+console.log('---', preCal("* + 3 4 5"))
+console.log('---', preCal("/ - 3 4 + 5 2"))
