@@ -1,4 +1,8 @@
 # Trie
+### TL;DR
+就是廣義的tree，每一個node有26個小孩（一般tree node只有左右小孩），然後有一個flag表示這個節點組成的string是不是一個單位。
+
+***
 #### What is trie?
 A trie (pronounced "try") is a tree-like data structure (prefix tree) used to efficiently store and retrieve a large set of _strings_, typically words, or keys that can be represented as character sequences. The term "trie" stands for "retrieval," and it is short for "reTRIEval."
 
