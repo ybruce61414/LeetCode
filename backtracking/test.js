@@ -215,8 +215,45 @@ const preCal = expression => {
   return stack[0]
 }
 
-console.log('---', preCal("- 3 * 4 5"))
-console.log('---', preCal("0"))
-console.log('---', preCal("+ 3 4"))
-console.log('---', preCal("* + 3 4 5"))
-console.log('---', preCal("/ - 3 4 + 5 2"))
+// console.log('---', preCal("- 3 * 4 5"))
+// console.log('---', preCal("0"))
+// console.log('---', preCal("+ 3 4"))
+// console.log('---', preCal("* + 3 4 5"))
+// console.log('---', preCal("/ - 3 4 + 5 2"))
+
+var canCompleteCircuit = function(gas, cost) {
+  // for (let start = 0; start < gas.length; start++) {
+  //   let vol = 0
+  //
+  //   for (let j = start; j < start + gas.length; j++) {
+  //     const pos = j % gas.length
+  //     vol = vol + gas[pos] - cost[pos]
+  //     if (vol < 0) break
+  //   }
+  //   console.log('yoyo--', vol)
+  //   if (vol >= 0) return start
+  // }
+  // return -1
+  let spare = 0;
+  let minSpare = Infinity;
+  let minIdx = null;
+
+  for (let i = 0; i < gas.length; i++) {
+    spare += gas[i] - cost[i];
+    console.log('--temp', spare, minSpare)
+    if (spare < minSpare) {
+      minSpare = spare;
+      minIdx = i;
+    }
+  }
+
+  console.log('-spare', spare)
+  if (spare < 0) {
+    return -1;
+  } else {
+    return (minIdx + 1) % (gas.length);
+  }
+};
+
+console.log('---ans', canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]))
+// console.log('---ans', canCompleteCircuit([2,3,4], [3,4,3]))

@@ -1,6 +1,6 @@
 # Trie
 ### TL;DR
-就是廣義的tree，每一個node有26個小孩（一般tree node只有左右小孩），然後有一個flag表示這個節點組成的string是不是一個單位。
+就是廣義的tree，每一個node表示組成的字串，有26個小孩（一般tree node只有左右小孩），每一個edge表示一個char，然後有一個flag表示這個節點組成的string是不是一個單位。
 
 ***
 #### What is trie?
