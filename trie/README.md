@@ -74,5 +74,8 @@ WordDictionary.prototype.search = function(word) {
 ```
 ####    Basics
 *must*:
-1. [208 Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
-2. [211 Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/)
+1. [LeetCode 208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
+2. [LeetCode 211. Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/)
+
+#### Advanced
+2. [LeetCode 212. Word Search II](https://leetcode.com/problems/word-search-ii/description/) ``hard``

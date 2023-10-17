@@ -255,5 +255,56 @@ var canCompleteCircuit = function(gas, cost) {
   }
 };
 
-console.log('---ans', canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]))
+// console.log('---ans', canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]))
 // console.log('---ans', canCompleteCircuit([2,3,4], [3,4,3]))
+
+class TrieNode {
+  constructor() {
+    this.children = new Array(26)
+    this.isEnd = false
+  }
+}
+
+class Trie {
+  constructor() {
+    this.root = new TrieNode()
+  }
+
+  insert(word) {
+    let node = this.root
+    console.log('---node', node)
+    for (let char of word) {
+      const charCodeAt = char.charCodeAt(0) - 'a'.charCodeAt(0)
+      console.log('---charCodeAt', char, charCodeAt, node)
+      if (node.children[charCodeAt] === undefined) {
+        node.children[charCodeAt] = new TrieNode()
+      }
+      node = node.children[charCodeAt]
+    }
+    node.isEnd = true
+  }
+
+  search(word) {
+    let node = this.root
+    for (let char of word) {
+      const charCodeAt = char.charCodeAt(0) - 'a'.charCodeAt(0)
+      if (node.children[charCodeAt] === undefined) return false
+      node = node.children[charCodeAt]
+    }
+
+    return node.isEnd
+  }
+}
+
+var findWords = function(board, words) {
+  const m = board.length
+  const n = board[0].length
+  const trie = new Trie()
+
+  for (let word of words) {
+    trie.insert(word)
+  }
+  return trie
+};
+
+console.log('---', findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]],["oath","pea","eat","rain"]))
