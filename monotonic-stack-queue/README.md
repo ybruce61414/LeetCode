@@ -4,7 +4,7 @@
 ##  Questions
 ####    Basics
 *must*:
-1. basics:
+1. stack:
 - [ ] 1.[LeetCode 20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) ``easy`` like: 22.2k, dislike: 1.5k
 - [ ] 2.[LeetCode 150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/) ``easy`` like: 6.6k, dislike: 960
 2. mono-stack:
