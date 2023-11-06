@@ -17,5 +17,6 @@
 
 #### Hard
 1. [LeetCode 84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) ``medium`` like: 16.1k, dislike: 232 
+   - key: 找往右first smaller和往左first smaller，夾起來就是每個height[i]能長出的寬度
    - very classic! mono stack along 2 side
 
