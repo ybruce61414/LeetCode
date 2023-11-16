@@ -6,6 +6,7 @@
 - [ ] 2.[LeetCode 424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/description/) ``medium`` like: 8.9k, dislike: 378 (難)
 - [ ] 3.[LeetCode 567. Permutation in String](https://leetcode.com/problems/permutation-in-string/description/) ``medium`` like: 10.8k, dislike: 359 
   - 比對兩個object的小技巧（deep equal）
+- [ ] 4.[LeetCode 438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/) ``medium`` like: 11.9k, dislike: 324 (very classic!!!)
   
 
 _pitfalls_:
