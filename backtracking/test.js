@@ -317,8 +317,25 @@ const flatten = nested => {
       res.push(item)
     }
   }
-  console.log('--res', res)
+  // console.log('--res', res)
   return res
 }
 
-console.log('--', flatten([[1,1],2,[1,1]]))
+// console.log('--', flatten([[1,1],2,[1,1]]))
+
+const arr5 = [1,2,[8,9]]
+const str5 = 'apple'
+// console.log('---', str5[0])
+for (let char of str5) {
+  console.log(char)
+}
+
+const obj5 = {
+  name: 'viola',
+  gender: 'male'
+}
+
+for (let key in obj5) {
+  console.log(key)
+}
+
