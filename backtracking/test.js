@@ -330,12 +330,15 @@ for (let char of str5) {
   console.log(char)
 }
 
-const obj5 = {
-  name: 'viola',
-  gender: 'male'
-}
+// const arr6 = [1,2,3,4,5]
+// const str6 = 'apple banana'
+// console.log('--1', str6.split(''))
+// console.log('--2', arr6.join('-'))
+// console.log('--3', str6.slice(0, 2))
 
-for (let key in obj5) {
-  console.log(key)
+for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    console.log('---ij',i, j)
+    if (i === 2 && j === 0) break
+  }
 }
-
