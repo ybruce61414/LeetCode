@@ -336,9 +336,45 @@ for (let char of str5) {
 // console.log('--2', arr6.join('-'))
 // console.log('--3', str6.slice(0, 2))
 
-for (let i = 0; i < 10; i++) {
-  for (let j = 0; j < 10; j++) {
-    console.log('---ij',i, j)
-    if (i === 2 && j === 0) break
+// for (let i = 0; i < 10; i++) {
+//   for (let j = 0; j < 10; j++) {
+//     console.log('---ij',i, j)
+//     if (i === 2 && j === 0) break
+//   }
+// }
+
+const ss = undefined
+const ss1 = null
+console.log('--', typeof ss1)
+
+function flattenArr(value) {
+  if (typeof value !== 'object' || value === null) {
+    return value
+  }
+  if (Array.isArray(value)) {
+    let res = []
+    for (let item of value) {
+      res = res.concat(flattenArr(item))
+    }
+    return res
   }
 }
+
+
+
+// console.log('---res', flattenArr([1,2,[5,6,[7],8]]))
+// console.log('---res', flattenArr([1,2,[5,6]]))
+
+const target = { a: 1, b: 2 }
+const source = { b: 4, c: 5 }
+
+const returnedTarget = Object.assign(target, source)
+// console.log('--returnedTarget', returnedTarget)
+
+const s = '((())))'
+
+for (let char of s) {
+  console.log('---s', char, s.length)
+}
+
+
