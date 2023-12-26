@@ -373,8 +373,30 @@ const returnedTarget = Object.assign(target, source)
 
 const s = '((())))'
 
-for (let char of s) {
-  console.log('---s', char, s.length)
+let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; // (*)
+
+// console.log('---1', rabbit.__proto__)
+// console.log('---2', Object.prototype, Object.__proto__)
+
+
+const shape = {
+  radius: 10,
+  diameter: function () {
+    return this.radius
+  },
+  diameter2: () => { return this?.radius }
+
 }
 
+console.log('---4', shape.diameter())
+console.log('---5', shape.diameter2())
+
+// console.log('--')
 
