@@ -395,8 +395,18 @@ const shape = {
 
 }
 
-console.log('---4', shape.diameter())
-console.log('---5', shape.diameter2())
+// console.log('---4', shape.diameter())
+// console.log('---5', shape.diameter2())
 
 // console.log('--')
+
+let user = {
+  firstName: "John",
+  sayHi() {
+    return (`Hello, ${this.firstName}!`);
+  }
+};
+
+console.log('--', user.sayHi())
+
 

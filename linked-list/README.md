@@ -54,6 +54,9 @@ copy the old one into the new one, this is expensive O(n).
 2. [LeetCode 82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) ``medium`` like: 7.9k, dislike: 254, (very interesting!)
 3. [LeetCode 86. Partition List](https://leetcode.com/problems/partition-list/description/) ``medium`` like: 5.6k, dislike: 641 (dummy node精髓)
 4. [LeetCode 61. Rotate List](https://leetcode.com/problems/rotate-list/) ``medium`` like: 8.2k, dislike: 1.4k
+   1. go (k % len) will get new head and new tail
+   2. connect linked list to be circular
+   3. make end node next = `null`
 5. [LeetCode 143. Reorder List](https://leetcode.com/problems/reorder-list/) ``medium`` like: 9.2k, dislike: 304 (有點難)
 6. [LeetCode 138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) ``medium`` like: 11.6k, dislike: 1.2k
      - good example for creating new node
