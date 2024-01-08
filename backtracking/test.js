@@ -407,6 +407,75 @@ let user = {
   }
 };
 
+
+
 console.log('--', user.sayHi())
 
+// let worker = {
+//   someMethod() {
+//     return 1;
+//   },
+//
+//   slow(x) {
+//     // scary CPU-heavy task here
+//     console.log("Called with " + x, this);
+//     return x * this?.someMethod(); // (*)
+//   }
+// };
+// worker.slow(2);
+//
+// let func = worker.slow;
+// func(2);
+
+function work(a, b) {
+  return ( a + b ); // work is an arbitrary function or method
+}
+
+let worker2 = {
+  someMethod() {
+    return 1;
+  },
+
+  slow(a, b) {
+    // scary CPU-heavy task here
+    return (a + b + 5);
+  }
+};
+
+function spy(func) {
+  function wrapper(...args) {
+    wrapper.calls.push(args)
+    console.log('--tt', this)
+    return func.apply(this, args)
+  }
+
+  wrapper.calls = []
+  return wrapper
+}
+
+// work = spy(work);
+let worker3 = spy(worker2.slow);
+worker2.slow = spy(worker2.slow);
+
+// work(1, 2); // 3
+// work(4, 5); // 9
+
+worker2.slow(1, 2); // 3
+worker2.slow(4, 5); // 9
+
+worker3(1, 2); // 3
+worker3(4, 5); // 9
+
+function _shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+
+    console.log('---j',i, j)
+  }
+  return arr;
+}
+
+console.log('--_shuffle', _shuffle([1,2,3,4,5,6,7]))
 

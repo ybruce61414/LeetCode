@@ -35,6 +35,7 @@
 6. [LeetCode 698.  Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) ``miedium``
 7. [LeetCode 36.  Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) ``miedium``
 8. [LeetCode 638.  Shopping Offers](https://leetcode.com/problems/shopping-offers/description/) ``miedium`` memo: kind of hard.. 生活化的題目
+8. [LeetCode 784.  Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/description/) ``miedium`` 生活化, 簡單的變化
 
 #### Hard
 1. [LeetCode 37.  Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) ``hard``
