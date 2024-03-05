@@ -56,9 +56,6 @@ const partition202304 = (arr, start, end) => {
 
 
 
-
-
-
 const quickSort = (arr, start = 0, end = arr.length - 1) => {
   if (start < end) {
     let pivotIdx = partitionFirst(arr, start, end);
@@ -73,10 +70,31 @@ const arr1 = [4, 6, 9, 1, 2, 5];
 const arr2 = [3, 2, 1, 5, 6, 4];
 
 // console.log(partitionFirst([[3,2,1,5,6,4]], 0, 7));
-console.log('partitionFirst--', partitionFirst([[3, 2, 1, 5, 6, 4]], 3, 5));
+// console.log('partitionFirst--', partitionFirst([[3, 2, 1, 5, 6, 4]], 3, 5));
 
 // console.log(quickSort(arr2));
 
-
-
 // console.log('----partition202304',partition202304([50, 25,92, 16, 76, 30, 43, 54, 19], 0, 8))
+
+
+const quickSelect = (arr, left, right) => {
+  let pivot = arr[left]
+  let s = left
+
+  for (let i = left + 1; i <= right; i++) {
+    if (pivot > arr[i]) {
+      s += 1
+      swap(arr, s, i)
+    }
+  }
+  if (s !== left) swap(arr, s, left)
+  return arr
+}
+
+const swap = (arr, idx1, idx2) => {
+  let temp = arr[idx1]
+  arr[idx1] = arr[idx2]
+  arr[idx2] = temp
+  return arr
+}
+console.log('----quickSelect',quickSelect([50, 100, 90, 80, 70, 25, 15], 0, 6))

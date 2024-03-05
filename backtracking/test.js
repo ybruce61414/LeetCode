@@ -466,16 +466,102 @@ worker2.slow(4, 5); // 9
 worker3(1, 2); // 3
 worker3(4, 5); // 9
 
-function _shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
+// function _shuffle(arr) {
+//   for (let i = arr.length - 1; i > 0; i--) {
+//     let j = Math.floor(Math.random() * (i + 1));
+//
+//     [arr[i], arr[j]] = [arr[j], arr[i]];
+//
+//     console.log('---j',i, j)
+//   }
+//   return arr;
+// }
+//
+// console.log('--_shuffle', _shuffle([1,2,3,4,5,6,7]))
 
-    [arr[i], arr[j]] = [arr[j], arr[i]];
 
-    console.log('---j',i, j)
-  }
-  return arr;
+function testyo(func) {
+  console.log('---func', func.length)
 }
 
-console.log('--_shuffle', _shuffle([1,2,3,4,5,6,7]))
+function sum(a, b, c) {
+  return a + b + c;
+}
 
+const sum2 = (a, b, c) => a + b + c
+
+function curry(callback) {
+  // Write your code here.
+  // this is the solution when callback has fixed length parameters
+  function helper(...args) {
+    if (args.length >= callback.length) {
+      return callback.apply(this, args)
+    } else {
+      return function(...args2) {
+        return helper.apply(this, [...args, ...args2])
+      }
+    }
+  }
+
+  // function helper(...args) {
+  //   if (args.length >= callback.length) {
+  //     return callback(...args)
+  //   } else {
+  //     return function(...args2) {
+  //       return helper(...args, ...args2)
+  //     }
+  //   }
+  // }
+
+  return helper
+}
+
+const curried = curry(sum2)
+
+console.log('--1', curried(1, 2, 3))
+console.log('--2', curried(1)(2, 3))
+console.log('--3', curried(1)(2)(3))
+console.log('--4', curried(1, 2)(3))
+
+
+function flattenArray(nested) {
+  let res = []
+  for (let item of nested) {
+    if (!Number.isInteger(item)) {
+      res = [...res, ...flattenArray(item)]
+    } else {
+      res.push(item)
+    }
+  }
+  return res
+}
+
+console.log('---f1', flattenArray([[1,1],2,[1,1]]))
+console.log('---f2', flattenArray([1,[4,[6]]]))
+
+
+function promisify(callback) {
+  // Write your code here.
+  return async function() {
+    return new Promise((resolve, reject) => {
+      const handleErrorAndValue = (error, value) => {
+        if (error !== null) {
+          reject(error)
+        } else {
+          resolve(value)
+        }
+      }
+      callback.apply(this, [...arguments, handleErrorAndValue])
+    })
+
+  }
+}
+
+const arr6 = new Array(6).fill(null).map((item, idx) => {
+  console.log('--i', item, idx)
+  return idx
+})
+
+const sss = 'minusplusminus'
+// console.log('---sss', sss.split('minus'))
+console.log('---sss', new Set(sss))
