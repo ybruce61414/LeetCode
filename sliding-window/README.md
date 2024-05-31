@@ -8,6 +8,7 @@
   - 比對兩個object的小技巧（deep equal）
 -  4.[LeetCode 438. Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/) ``medium`` (very classic!!!)
 -  5.[LeetCode 718. Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/description/) ``medium`` real-life problem
+-  6.[LeetCode 209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/description/) ``medium``  classic pattern
   
 
 _pitfalls_:

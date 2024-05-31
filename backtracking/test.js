@@ -1,567 +1,172 @@
-//
-//
-// const array1 = [
-//   { id: 1, name: 'John' },
-//   { id: 2, name: 'Alice' },
-//   { id: 3, name: 'Bob' },
-// ];
-//
-// // 示例数组2
-// const array2 = [
-//   { id: 2, name: 'Alice' },
-//   { id: 3, name: 'Bob' },
-//   { id: 4, name: 'Eve' },
-// ];
-//
-// // 找到交集的函数
-// function findIntersection(arr1, arr2) {
-//   return arr1.filter(obj1 => arr2.some(obj2 => obj2.id === obj1.id));
-// }
-//
-// // 找到交集的结果
-// const intersection = findIntersection(array1, array2);
-//
-//
-//
-// class MyClass {
-//   // 静态方法
-//   static myStaticMethod() {
-//     return 'This is a static method.';
-//   }
-//
-//   // 普通实例方法
-//   myInstanceMethod() {
-//     return 'This is an instance method.';
-//   }
-// }
-//
-// // 调用静态方法，不需要创建类的实例
-// console.log(MyClass.myStaticMethod()); // 输出: "This is a static method."
-// // console.log(MyClass.myInstanceMethod());
-//
-// // 创建类的实例
-// const myObject = new MyClass();
-//
-// // 调用实例方法
-// console.log(myObject.myInstanceMethod())
-// // console.log(myObject.myStaticMethod())
-//
-//
-// const dec = (callback, num) => {
-//   return function(...args) {
-//     return callback.apply(this, [...args, num])
-//   }
-// }
-//
-// const func1 = (...args) => {
-//   return args.reduce((acc, cur) => acc + cur)
-// }
-//
-// const decEx1 = dec(func1, 3)
-//
-// // console.log('---', decEx1(1,2,3))
-//
-// const testObj = {
-//   name: 'ellen',
-//   gender: 'female',
-//   major: 'law',
-// }
-//
-// for (let key in testObj) {
-//   console.log('--key-', key)
-// }
-//
-// let permissions1 = { canView: true }
-// let permissions2 = { canEdit: true }
-// // copies all properties from permissions1 and permissions2 into user
-// Object.assign(testObj, permissions1, permissions2)
-//
-// function makeUser() {
-//   return {
-//     name: "John",
-//     ref: this
-//   };
-// }
-//
-//
-// const obj1 = { name: 'viola' }
-// const obj2 = { name: 'viola' }
-// const obj3 = obj1
-//
-// // console.log('--', obj1 == obj3)
-//
-//
-// let animal = {
-//   walk() {
-//     if (!this.isSleeping) {
-//       alert(`I walk`)
-//     }
-//   },
-//   sleep() {
-//     this.isSleeping = true
-//   }
-// }
-//
-// let rabbit = {
-//   name: "White Rabbit",
-//   __proto__: animal
-// }
-//
-// // modifies rabbit.isSleeping
-// rabbit.sleep()
-//
-// console.log('--', rabbit.isSleeping, rabbit)
-//
-// function cat() {}
-// console.log('--', cat.__proto__)
-// console.log('---', typeof NaN)
-//
-// const list1 = [1]
-// const list2 = [1]
-//
-// console.log('--', list1 === list2)
-//
-// const str1 = 'abcde'
-// const arr10 = ['w', 'e', 'r']
-// console.log('---',arr10.join(''))
-//
-// const isPalindrome = str => {
-//   let left = 0
-//   let right = str.length - 1
-//
-//   while (left < right) {
-//     if (str[left] !== str[right]) return false
-//     left += 1
-//     right -= 1
-//   }
-//   return true
-// }
-//
-//
-// const map1 = {
-//   id: '123',
-//   name: 'viola'
-// }
-//
-//
-// const arr3 = [1,2,3]
-// const str7 = '?assetype=2'
-//
-// var evalRPN = function(tokens) {
-//   const signsSet = new Set(["+", "-", "*", "/"])
-//   const stack = []
-//
-//   for (let token of tokens) {
-//     if (signsSet.has(token)) {
-//       const last1 = Number(stack.pop())
-//       const last2 = Number(stack.pop())
-//       console.log('--l1 l2', last1, last2)
-//       let res = 0
-//       switch (token) {
-//         case '-':
-//           res = last2 - last1
-//           break
-//         case '*':
-//           res = last1 * last2
-//           break
-//         case '/':
-//           res = last2 / last1
-//           break
-//         case '+':
-//         default:
-//           res = last1 + last2
-//           break
-//       }
-//       stack.push(res)
-//     } else {
-//       stack.push(token)
-//     }
-//   }
-//   return stack[0]
-// };
-//
-// const preCal = expression => {
-//   // return str.split(' ')
-//   const signsSet = new Set(["+", "-", "*", "/"])
-//   const tokens = expression.split(' ').reverse();
-//   const stack = []
-//
-//   for (let token of tokens) {
-//     if (signsSet.has(token)) {
-//       const last1 = Number(stack.pop())
-//       const last2 = Number(stack.pop())
-//       let res = 0
-//       switch (token) {
-//         case '-':
-//           res = last1 - last2
-//           break
-//         case '*':
-//           res = last1 * last2
-//           break
-//         case '/':
-//           res = last1 / last2
-//           break
-//         case '+':
-//         default:
-//           res = last1 + last2
-//           break
-//       }
-//       stack.push(res)
-//     } else {
-//       stack.push(token)
-//     }
-//   }
-//   return stack[0]
-// }
-//
-// // console.log('---', preCal("- 3 * 4 5"))
-// // console.log('---', preCal("0"))
-// // console.log('---', preCal("+ 3 4"))
-// // console.log('---', preCal("* + 3 4 5"))
-// // console.log('---', preCal("/ - 3 4 + 5 2"))
-//
-// var canCompleteCircuit = function(gas, cost) {
-//   // for (let start = 0; start < gas.length; start++) {
-//   //   let vol = 0
-//   //
-//   //   for (let j = start; j < start + gas.length; j++) {
-//   //     const pos = j % gas.length
-//   //     vol = vol + gas[pos] - cost[pos]
-//   //     if (vol < 0) break
-//   //   }
-//   //   console.log('yoyo--', vol)
-//   //   if (vol >= 0) return start
-//   // }
-//   // return -1
-//   let spare = 0;
-//   let minSpare = Infinity;
-//   let minIdx = null;
-//
-//   for (let i = 0; i < gas.length; i++) {
-//     spare += gas[i] - cost[i];
-//     console.log('--temp', spare, minSpare)
-//     if (spare < minSpare) {
-//       minSpare = spare;
-//       minIdx = i;
-//     }
-//   }
-//
-//   console.log('-spare', spare)
-//   if (spare < 0) {
-//     return -1;
-//   } else {
-//     return (minIdx + 1) % (gas.length);
-//   }
-// };
-//
-// // console.log('---ans', canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]))
-// // console.log('---ans', canCompleteCircuit([2,3,4], [3,4,3]))
-//
-// class TrieNode {
-//   constructor() {
-//     this.children = new Array(26)
-//     this.isEnd = false
-//   }
-// }
-//
-// class Trie {
-//   constructor() {
-//     this.root = new TrieNode()
-//   }
-//
-//   insert(word) {
-//     let node = this.root
-//     console.log('---node', node)
-//     for (let char of word) {
-//       const charCodeAt = char.charCodeAt(0) - 'a'.charCodeAt(0)
-//       console.log('---charCodeAt', char, charCodeAt, node)
-//       if (node.children[charCodeAt] === undefined) {
-//         node.children[charCodeAt] = new TrieNode()
-//       }
-//       node = node.children[charCodeAt]
-//     }
-//     node.isEnd = true
-//   }
-//
-//   search(word) {
-//     let node = this.root
-//     for (let char of word) {
-//       const charCodeAt = char.charCodeAt(0) - 'a'.charCodeAt(0)
-//       if (node.children[charCodeAt] === undefined) return false
-//       node = node.children[charCodeAt]
-//     }
-//
-//     return node.isEnd
-//   }
-// }
-//
-// var findWords = function(board, words) {
-//   const m = board.length
-//   const n = board[0].length
-//   const trie = new Trie()
-//
-//   for (let word of words) {
-//     trie.insert(word)
-//   }
-//   return trie
-// };
-//
-// // console.log('---', findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]],["oath","pea","eat","rain"]))
-
-const flatten = nested => {
-  let res = []
-  for (let item of nested) {
-    if (Array.isArray(item)) {
-      res = [...res, ...flatten(item)]
-    } else {
-      res.push(item)
-    }
-  }
-  // console.log('--res', res)
-  return res
-}
-
-// console.log('--', flatten([[1,1],2,[1,1]]))
-
-const arr5 = [1,2,[8,9]]
-const str5 = 'apple'
-// console.log('---', str5[0])
-for (let char of str5) {
-  console.log(char)
-}
-
-// const arr6 = [1,2,3,4,5]
-// const str6 = 'apple banana'
-// console.log('--1', str6.split(''))
-// console.log('--2', arr6.join('-'))
-// console.log('--3', str6.slice(0, 2))
-
-// for (let i = 0; i < 10; i++) {
-//   for (let j = 0; j < 10; j++) {
-//     console.log('---ij',i, j)
-//     if (i === 2 && j === 0) break
-//   }
-// }
-
-const ss = undefined
-const ss1 = null
-console.log('--', typeof ss1)
-
-function flattenArr(value) {
-  if (typeof value !== 'object' || value === null) {
-    return value
-  }
-  if (Array.isArray(value)) {
-    let res = []
-    for (let item of value) {
-      res = res.concat(flattenArr(item))
-    }
-    return res
+function decorator(func) {
+  return function() {
+    console.log('---yo args', this)
+    // return func.apply(this, arguments)
+    return func(...arguments)
   }
 }
 
-
-
-// console.log('---res', flattenArr([1,2,[5,6,[7],8]]))
-// console.log('---res', flattenArr([1,2,[5,6]]))
-
-const target = { a: 1, b: 2 }
-const source = { b: 4, c: 5 }
-
-const returnedTarget = Object.assign(target, source)
-// console.log('--returnedTarget', returnedTarget)
-
-const s = '((())))'
-
-let animal = {
-  eats: true
-};
-let rabbit = {
-  jumps: true
-};
-
-rabbit.__proto__ = animal; // (*)
-
-// console.log('---1', rabbit.__proto__)
-// console.log('---2', Object.prototype, Object.__proto__)
-
-
-const shape = {
-  radius: 10,
-  diameter: function () {
-    return this.radius
-  },
-  diameter2: () => { return this?.radius }
-
+const adder = function(a, b) {
+  return a + b
 }
 
-// console.log('---4', shape.diameter())
-// console.log('---5', shape.diameter2())
-
-// console.log('--')
-
-let user = {
-  firstName: "John",
-  sayHi() {
-    return (`Hello, ${this.firstName}!`);
-  }
-};
-
-
-
-console.log('--', user.sayHi())
-
-// let worker = {
-//   someMethod() {
-//     return 1;
-//   },
-//
-//   slow(x) {
-//     // scary CPU-heavy task here
-//     console.log("Called with " + x, this);
-//     return x * this?.someMethod(); // (*)
-//   }
-// };
-// worker.slow(2);
-//
-// let func = worker.slow;
-// func(2);
-
-function work(a, b) {
-  return ( a + b ); // work is an arbitrary function or method
-}
-
-let worker2 = {
+let employee = {
   someMethod() {
-    return 1;
+    return 50
   },
-
-  slow(a, b) {
-    // scary CPU-heavy task here
-    return (a + b + 5);
+  slow(x) {
+    console.log('-call slow method', x, this)
+    return x + (this?.someMethod() || 0)
   }
 };
 
-function spy(func) {
-  function wrapper(...args) {
-    wrapper.calls.push(args)
-    console.log('--tt', this)
-    return func.apply(this, args)
-  }
+const adderDec = decorator(adder)
+let outerFunc0 = employee.slow
+let outerFunc1 = employee.slow.bind(employee)
+let outerFunc2 = decorator(employee.slow)
 
-  wrapper.calls = []
-  return wrapper
-}
+// employee.slow = decorator(employee.slow)
 
-// work = spy(work);
-let worker3 = spy(worker2.slow);
-worker2.slow = spy(worker2.slow);
+// console.log('---test0:', adderDec(99, 100))
+// console.log('---test1:', employee.slow(1))
+// console.log('---test2:', employee.slow(2))
+// console.log('---outerFunc0:', outerFunc0(3))
+// console.log('---outerFunc1:', outerFunc1(3))
+console.log('---outerFunc2:', outerFunc2.bind(employee)(3))
 
-// work(1, 2); // 3
-// work(4, 5); // 9
-
-worker2.slow(1, 2); // 3
-worker2.slow(4, 5); // 9
-
-worker3(1, 2); // 3
-worker3(4, 5); // 9
-
-// function _shuffle(arr) {
-//   for (let i = arr.length - 1; i > 0; i--) {
-//     let j = Math.floor(Math.random() * (i + 1));
-//
-//     [arr[i], arr[j]] = [arr[j], arr[i]];
-//
-//     console.log('---j',i, j)
-//   }
-//   return arr;
-// }
-//
-// console.log('--_shuffle', _shuffle([1,2,3,4,5,6,7]))
-
-
-function testyo(func) {
-  console.log('---func', func.length)
-}
-
-function sum(a, b, c) {
-  return a + b + c;
-}
-
-const sum2 = (a, b, c) => a + b + c
-
-function curry(callback) {
-  // Write your code here.
-  // this is the solution when callback has fixed length parameters
-  function helper(...args) {
-    if (args.length >= callback.length) {
-      return callback.apply(this, args)
-    } else {
-      return function(...args2) {
-        return helper.apply(this, [...args, ...args2])
-      }
-    }
-  }
-
-  // function helper(...args) {
-  //   if (args.length >= callback.length) {
-  //     return callback(...args)
-  //   } else {
-  //     return function(...args2) {
-  //       return helper(...args, ...args2)
-  //     }
-  //   }
-  // }
-
-  return helper
-}
-
-const curried = curry(sum2)
-
-console.log('--1', curried(1, 2, 3))
-console.log('--2', curried(1)(2, 3))
-console.log('--3', curried(1)(2)(3))
-console.log('--4', curried(1, 2)(3))
-
-
-function flattenArray(nested) {
+function flatten(arr) {
   let res = []
-  for (let item of nested) {
-    if (!Number.isInteger(item)) {
-      res = [...res, ...flattenArray(item)]
-    } else {
+
+  for (let item of arr) {
+    if (!Array.isArray(item)) {
       res.push(item)
+    } else {
+      res = [...res, ...flatten(item)]
     }
   }
   return res
 }
 
-console.log('---f1', flattenArray([[1,1],2,[1,1]]))
-console.log('---f2', flattenArray([1,[4,[6]]]))
+// console.log('--flatten1', flatten([[1,1], 2, [5,[7],6]]))
 
 
-function promisify(callback) {
-  // Write your code here.
-  return async function() {
-    return new Promise((resolve, reject) => {
-      const handleErrorAndValue = (error, value) => {
-        if (error !== null) {
-          reject(error)
-        } else {
-          resolve(value)
-        }
+export default function deepEqual(valueA, valueB) {
+  if (typeof valueA !== typeof valueB) {
+    console.log('1')
+    return false
+  } else if (Array.isArray(valueA) && Array.isArray(valueB)) {
+    console.log('2')
+    if (valueA.length !== valueB.length) return false
+
+    for (let i = 0; i < valueA.length; i++) {
+      if (!deepEqual(valueA[i], valueB[i])) return false
+    }
+    return true
+  } else if (typeof valueA === 'object' && typeof valueB === 'object') {
+    console.log('3')
+    if (valueA === null && valueB === null) return true
+    if (valueA === null || valueB === null) return false
+    console.log('32')
+    if (Object.keys(valueA).length !== Object.keys(valueB).length) return false
+    console.log('33')
+
+    for (let key in valueA) {
+      if (!deepEqual(valueA[key], valueB[key])) return false
+    }
+    return true
+  }
+  return valueA === valueB
+}
+
+// console.log('--deepEqual', deepEqual({ foo: 'bar' }, { foo: 'bar' }))
+// console.log('--deepEqual',Object.prototype.toString.call([1,5,7]))
+
+const nullO = Object.create(null)
+console.log('--1',  Object.getPrototypeOf({}))
+console.log('--2',   Array.prototype)
+
+
+
+
+class EventEmitter {
+  constructor() {
+    this.eventMap = new Map()
+  }
+
+  /**
+   * @param {string} eventName
+   * @param {Function} listener
+   * @returns {{off: Function}}
+   */
+  on(eventName, listener) {
+    if (!this.eventMap.has(eventName)) {
+      this.eventMap.set(eventName, [])
+    }
+    const copy = (...args) => listener(...args)
+    const listenerObj = {
+      eventName,
+      originMap:this.eventMap,
+      originListener: copy,
+
+      off() {
+        // console.log('---off!', this.originMap.get(this.eventName))
+        const newRes = this.originMap
+          .get(this.eventName)
+          .filter(listener => listener.originListener !== this.originListener)
+
+        this.originMap.set(this.eventName, newRes)
       }
-      callback.apply(this, [...arguments, handleErrorAndValue])
-    })
+    }
+    this.eventMap.get(eventName).push(listenerObj)
+    return listenerObj
+  }
 
+  /**
+   * @param {string} eventName
+   * @param {...any} args
+   * @returns boolean
+   */
+  emit(eventName, ...args) {
+    if (!this.eventMap.has(eventName)) return false
+
+    const listeners = this.eventMap.get(eventName)
+    if (listeners.length === 0) return false
+
+    for (let listener of listeners) {
+      listener.originListener.apply(this, args)
+    }
+    return true
   }
 }
 
-const arr6 = new Array(6).fill(null).map((item, idx) => {
-  console.log('--i', item, idx)
-  return idx
-})
 
-const sss = 'minusplusminus'
-// console.log('---sss', sss.split('minus'))
-console.log('---sss', new Set(sss))
+
+const emitter = new EventEmitter();
+
+let num = 1;
+function square() {
+  num *= 2;
+}
+
+const sub1 = emitter.on('square', square);
+emitter.emit('square');
+// 2
+console.log('-num1', num)
+
+const sub2 = emitter.on('square', square);
+emitter.emit('square');
+// 8
+console.log('-num2', num)
+
+sub1.off();
+emitter.emit('square');
+// 16
+console.log('-num3', num)
+
+sub2.off();
+emitter.emit('square');
+// 16
+console.log('-num4', num)
+
+console.log('---', 'apple'.split(''))
+console.log('---', ['a', 'c', 'd'].join(''))

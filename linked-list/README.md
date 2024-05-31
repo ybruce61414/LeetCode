@@ -28,6 +28,12 @@ copy the old one into the new one, this is expensive O(n).
 - **Traversing** the list
 - **Inserting** node in the list
 - **Deleting** node from the list
+
+####  Real-life Applications
+- always comes up with __Heap__
+  - utils (need to remember) 
+  - [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/) 
+  - [355. Design Twitter](https://leetcode.com/problems/design-twitter/description/)
 ***
 
 ##  Questions
