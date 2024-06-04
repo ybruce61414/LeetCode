@@ -170,3 +170,4 @@ console.log('-num4', num)
 
 console.log('---', 'apple'.split(''))
 console.log('---', ['a', 'c', 'd'].join(''))
+console.log('---2', ['a', 'c', 'd'].join(''))
